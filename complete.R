@@ -59,9 +59,9 @@ complete <- function(directory, id = 1:332) {
   
   nocsv<-sub(".csv", "", numGoodParticulateMatterCompleteCaseDataFramesForCsvFilesInId["id"][[1]])
   
-  noX<-as.numeric(sub("X", "", nocsv))
+  noX<-sub("X", "", nocsv)
   
-  numGoodParticulateMatterCompleteCaseDataFramesForCsvFilesInId["id"]<-noX
+  numGoodParticulateMatterCompleteCaseDataFramesForCsvFilesInId["id"]<-as.numeric(noX)
  
   setwd(initialDirectory)
   
