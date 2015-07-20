@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<activityRootModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm4="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm5="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" xmlns:dm9="http://schemas.microsoft.com/dsltools/SimpleShapesModel" dslVersion="1.0.0.0" Id="42d0b53c-b43f-4108-b385-558fc9a67395" name="Activity1" linkedPackageId="03b71219-5fb1-487b-b956-caf7b57ce55a" xmlns="http://schemas.microsoft.com/VisualStudio/TeamArchitect/ActivityDesigner">
+<activityRootModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm4="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm5="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" xmlns:dm9="http://schemas.microsoft.com/dsltools/SimpleShapesModel" dslVersion="1.0.0.0" Id="42d0b53c-b43f-4108-b385-558fc9a67395" name="pollutantmean.R" linkedPackageId="03b71219-5fb1-487b-b956-caf7b57ce55a" xmlns="http://schemas.microsoft.com/VisualStudio/TeamArchitect/ActivityDesigner">
   <description>Write a function named 'pollutantmean' that calculates the mean 
 of a pollutant (sulfate or nitrate) across a specified list of monitors. 
 The function 'pollutantmean' takes three arguments: 'directory', '
@@ -8,23 +8,9 @@ pollutant', and 'id'. Given a vector monitor ID numbers,
  the directory specified in the 'directory' argument and returns the
  mean of the pollutant across all of the monitors, ignoring any
  missing values coded as NA. A prototype of the function is as follows </description>
-  <profileInstances>
-    <packageHasProfileInstances Id="62131bee-9862-42ac-8211-9b5207bc3b36">
-      <profileInstance Id="7481961c-c526-420c-8521-b303260ca2d4" name="StandardProfileL2">
-        <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
-      </profileInstance>
-      <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
-    </packageHasProfileInstances>
-    <packageHasProfileInstances Id="8ba94f96-8043-42b3-8294-a909dd4dd342">
-      <profileInstance Id="91f0f549-2959-4a79-8ff6-4bb9e629e594" name="StandardProfileL3">
-        <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
-      </profileInstance>
-      <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
-    </packageHasProfileInstances>
-  </profileInstances>
   <packagedElements>
     <activityRootModelHasActivity>
-      <activity Id="7b024b72-9646-4719-8302-edbf5a425f53" name="Activity1" isAbstract="false" isLeaf="false" isActiveClass="false" isReentrant="false" isReadOnly="false" isSingleExecution="false">
+      <activity Id="7b024b72-9646-4719-8302-edbf5a425f53" name="pollutantmean.R" isAbstract="false" isLeaf="false" isActiveClass="false" isReentrant="false" isReadOnly="false" isSingleExecution="false">
         <elementDefinition Id="251f3370-ba28-4256-9aab-4a6fe22919dd" />
         <nodes>
           <activityParameterNode Id="64c139f3-612c-434d-a23e-60b2ca9e562e" name=" directory" isLeaf="false" ordering="Unordered" isControlType="false">
@@ -305,5 +291,19 @@ pollutant', and 'id'. Given a vector monitor ID numbers,
   </packagedElements>
   <package Id="03b71219-5fb1-487b-b956-caf7b57ce55a" name="hw1AcitivityDiagram">
     <elementDefinition Id="0c12ed33-3e1c-43f3-9eb1-68dcd517e934" />
+    <profileInstances>
+      <packageHasProfileInstances Id="62131bee-9862-42ac-8211-9b5207bc3b36">
+        <profileInstance Id="7481961c-c526-420c-8521-b303260ca2d4" name="StandardProfileL2">
+          <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
+        </profileInstance>
+        <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
+      </packageHasProfileInstances>
+      <packageHasProfileInstances Id="8ba94f96-8043-42b3-8294-a909dd4dd342">
+        <profileInstance Id="91f0f549-2959-4a79-8ff6-4bb9e629e594" name="StandardProfileL3">
+          <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
+        </profileInstance>
+        <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
+      </packageHasProfileInstances>
+    </profileInstances>
   </package>
 </activityRootModel>

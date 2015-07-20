@@ -3,6 +3,54 @@
   dslVersion="1.0.0.0"
   Id="0c12ed33-3e1c-43f3-9eb1-68dcd517e934"
   name="hw1AcitivityDiagram" xmlns="http://schemas.microsoft.com/dsltools/ModelStore">
+  <ownedCommentsInternal>
+    <comment
+      Id="5fca6c00-63f0-4870-86d2-eefd2c5fedc2">
+      <body>particulateMatterCompleteCaseListsForCsvFilesInId &lt;- 
+    sapply(vectorForCsvFilesInId
+           ,function(file) {
+               pollutantsInListOfDataFramesForCsvFilesInId &lt;-
+                 sapply(pollutant
+                      ,function(p) { 
+                        listOfDataFramesForCsvFilesInId[[file]][p]
+               },simplify = FALSE)
+                      
+               completeCases &lt;- 
+                 sapply(pollutantsInListOfDataFramesForCsvFilesInId
+                      ,function(p) { 
+                        complete.cases(p)
+               },simplify = FALSE)
+               
+               sapply(pollutant
+                      ,function(p) { 
+                        pollutantsInListOfDataFramesForCsvFilesInId[[p]][completeCases[[p]],]
+                      },simplify = FALSE)
+             },simplify = FALSE)</body>
+      <annotatedElements>
+        <objectNodeMoniker
+          Id="9e20c84b-c53a-47d7-89ed-93928712c75a"
+          LastKnownName="create  particulateMatterCompleteCaseListsForCsvFilesInId "
+          LastKnownLocation="hw1AcitivityDiagram.uml" />
+      </annotatedElements>
+    </comment>
+    <comment
+      Id="bf0d08ca-fd69-436b-ae1c-1ca55fd053ea">
+      <body>colnames(numGoodParticulateMatterCompleteCaseDataFramesForCsvFilesInId) &lt;- 
+    c("id", "nobs")
+  
+  nocsv&lt;-sub(".csv", "", numGoodParticulateMatterCompleteCaseDataFramesForCsvFilesInId["id"][[1]])
+  
+  noX&lt;-as.numeric(sub("X", "", nocsv))
+  
+  numGoodParticulateMatterCompleteCaseDataFramesForCsvFilesInId["id"]&lt;-noX</body>
+      <annotatedElements>
+        <objectNodeMoniker
+          Id="e345ee00-0e63-4268-81d4-28e584165dfb"
+          LastKnownName="Format"
+          LastKnownLocation="hw1AcitivityDiagram.uml" />
+      </annotatedElements>
+    </comment>
+  </ownedCommentsInternal>
   <profileInstances>
     <packageHasProfileInstances
       Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b">
@@ -21,7 +69,7 @@
     <packageHasNamedElement>
       <activity
         Id="251f3370-ba28-4256-9aab-4a6fe22919dd"
-        name="Activity1"
+        name="pollutantmean.R"
         isAbstract="false"
         isLeaf="false"
         isActiveClass="false"
@@ -510,6 +558,991 @@
             <upperBound>
               <literalInteger
                 Id="42e38f6e-38f2-45be-9f23-c6d993f00e12"
+                name="2147483647"
+                value="2147483647" />
+            </upperBound>
+          </objectNode>
+        </nodes>
+      </activity>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <activity
+        Id="38dff6f5-c1c5-4917-8b86-e47c4a5d99a6"
+        name="complete.R"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false"
+        isReentrant="false"
+        isReadOnly="false"
+        isSingleExecution="false">
+        <nodes>
+          <activityParameterNode
+            Id="82d56b7d-9f9a-43b4-942a-775649861a0a"
+            name=" directory"
+            isLeaf="false"
+            ordering="Unordered"
+            isControlType="false">
+            <objectFlowTargets>
+              <objectFlow
+                Id="298130b4-fac4-4d63-b7b0-f02fdc54b5af"
+                guard="setwd(directory)"
+                isLeaf="false"
+                isMulticast="false"
+                isMultireceive="false">
+                <inputPinMoniker
+                  Id="e0d058f2-f968-4826-b06d-47e84ebddfaf"
+                  LastKnownName="wd"
+                  LastKnownLocation="hw1AcitivityDiagram.uml" />
+              </objectFlow>
+            </objectFlowTargets>
+            <upperBound>
+              <literalInteger
+                Id="2780ff51-971d-43c7-9ee5-8fed734ca1e1"
+                name="2147483647"
+                value="2147483647" />
+            </upperBound>
+          </activityParameterNode>
+          <activityParameterNode
+            Id="a08ae6a3-fe54-49d9-accd-fda6003202e0"
+            name="pollutant"
+            isLeaf="false"
+            ordering="Unordered"
+            isControlType="false">
+            <objectFlowTargets>
+              <objectFlow
+                Id="43d5a4f0-67b9-49ab-a6ef-d0a4579218f2"
+                guard="particulateMatterDataFramesForCsvFilesInId &lt;- sapply(vectorForCsvFilesInId,function(p) { listOfDataFramesForCsvFilesInId[[p]][pollutant]},simplify = FALSE)"
+                isLeaf="false"
+                isMulticast="false"
+                isMultireceive="false">
+                <objectNodeMoniker
+                  Id="4fa858fb-84db-40d4-bb6e-b6c90af18bbd"
+                  LastKnownName="create  particulateMatterDataFramesForCsvFilesInId"
+                  LastKnownLocation="hw1AcitivityDiagram.uml" />
+              </objectFlow>
+            </objectFlowTargets>
+            <upperBound>
+              <literalInteger
+                Id="3ca7342f-7dc8-4d14-86bb-93cadc571f14"
+                name="2147483647"
+                value="2147483647" />
+            </upperBound>
+          </activityParameterNode>
+          <activityParameterNode
+            Id="fcdb90a4-c114-49e9-8aeb-5ce3a5278c2e"
+            name="id"
+            isLeaf="false"
+            ordering="Unordered"
+            isControlType="false">
+            <description>a vector monitor ID numbers</description>
+            <objectFlowTargets>
+              <objectFlow
+                Id="70c64d64-ad83-4c34-81f5-e560be0badab"
+                guard="vectorForCsvFilesInId &lt;- vectorForCsvFiles [id]"
+                isLeaf="false"
+                isMulticast="false"
+                isMultireceive="false">
+                <objectNodeMoniker
+                  Id="42499edb-3886-43f0-8f6f-65834c239aed"
+                  LastKnownName="create vectorForCsvFilesInId"
+                  LastKnownLocation="hw1AcitivityDiagram.uml" />
+              </objectFlow>
+            </objectFlowTargets>
+            <upperBound>
+              <literalInteger
+                Id="0a8a6577-142e-4483-bf3c-b5f4a7ccf5c3"
+                name="2147483647"
+                value="2147483647" />
+            </upperBound>
+          </activityParameterNode>
+          <callBehaviorAction
+            Id="c02da6ee-d940-4801-b69d-7fb1fb873a0a"
+            name="Toggle  Working Directory"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="aa051363-abd5-4bb0-be84-84e394c20ed2"
+                isLeaf="false">
+                <callBehaviorActionMoniker
+                  Id="86c391fc-4c01-4512-a238-89792faab917"
+                  LastKnownName="Set Working Dir to directory"
+                  LastKnownLocation="hw1AcitivityDiagram.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+            <pins>
+              <callActionHasResults>
+                <outputPin
+                  Id="e564476a-daf9-43fa-8e15-c1649bc75c19"
+                  name="wd"
+                  isLeaf="false"
+                  ordering="Unordered"
+                  isControlType="false"
+                  isControl="false">
+                  <objectFlowTargets>
+                    <objectFlow
+                      Id="b0d17428-f450-44f7-bb01-8e11cafd54e2"
+                      guard="initialDirectory &lt;- getwd()"
+                      isLeaf="false"
+                      isMulticast="false"
+                      isMultireceive="false">
+                      <inputPinMoniker
+                        Id="cc65b690-0ba6-4476-b9ae-ebefcc7647d1"
+                        LastKnownName="initialDirectory"
+                        LastKnownLocation="hw1AcitivityDiagram.uml" />
+                    </objectFlow>
+                  </objectFlowTargets>
+                  <upperBound>
+                    <literalInteger
+                      Id="6cf18fc8-b62d-4fa2-9517-0ef8b24eb2fd"
+                      name="2147483647"
+                      value="2147483647" />
+                  </upperBound>
+                </outputPin>
+              </callActionHasResults>
+              <callActionHasResults>
+                <outputPin
+                  Id="b6890a5f-a2a9-430e-b96f-24f6fe911b91"
+                  name="return fuction value"
+                  isLeaf="false"
+                  ordering="Unordered"
+                  isControlType="false"
+                  isControl="false">
+                  <objectFlowTargets>
+                    <objectFlow
+                      Id="08adb10a-ad34-4f81-8232-351cc2cfef6a"
+                      isLeaf="false"
+                      isMulticast="false"
+                      isMultireceive="false">
+                      <sendSignalActionMoniker
+                        Id="af080941-514e-419f-abdb-8ad09baad4d4"
+                        LastKnownName="Mean"
+                        LastKnownLocation="hw1AcitivityDiagram.uml" />
+                    </objectFlow>
+                  </objectFlowTargets>
+                  <upperBound>
+                    <literalInteger
+                      Id="e91acad1-650a-4a5e-a5c6-4f41da91d609"
+                      name="2147483647"
+                      value="2147483647" />
+                  </upperBound>
+                </outputPin>
+              </callActionHasResults>
+              <callActionHasResults>
+                <outputPin
+                  Id="1874f258-dd0c-4e8b-ab01-4d803cfb6eaf"
+                  name="initialDirectory"
+                  isLeaf="false"
+                  ordering="Unordered"
+                  isControlType="false"
+                  isControl="false">
+                  <objectFlowTargets>
+                    <objectFlow
+                      Id="63cc6e1d-355a-40c5-93d1-f7589bfd1104"
+                      guard="setwd(initialDirectory)"
+                      isLeaf="false"
+                      isMulticast="false"
+                      isMultireceive="false">
+                      <inputPinMoniker
+                        Id="c783df98-f5c3-4fe3-852e-a1c33696424d"
+                        LastKnownName="wd"
+                        LastKnownLocation="hw1AcitivityDiagram.uml" />
+                    </objectFlow>
+                  </objectFlowTargets>
+                  <upperBound>
+                    <literalInteger
+                      Id="3ee14404-2c6e-48de-a629-fd80b8e44e9f"
+                      name="2147483647"
+                      value="2147483647" />
+                  </upperBound>
+                </outputPin>
+              </callActionHasResults>
+              <invocationActionHasArguments>
+                <inputPin
+                  Id="cc65b690-0ba6-4476-b9ae-ebefcc7647d1"
+                  name="initialDirectory"
+                  isLeaf="false"
+                  ordering="Unordered"
+                  isControlType="false"
+                  isControl="false">
+                  <upperBound>
+                    <literalInteger
+                      Id="9235f1c2-3855-4d03-94c8-9e1102a6bf59"
+                      name="2147483647"
+                      value="2147483647" />
+                  </upperBound>
+                </inputPin>
+              </invocationActionHasArguments>
+              <invocationActionHasArguments>
+                <inputPin
+                  Id="459bed09-9a20-4cea-a117-30ff224ed605"
+                  name="!is.na"
+                  isLeaf="false"
+                  ordering="Unordered"
+                  isControlType="false"
+                  isControl="false">
+                  <upperBound>
+                    <literalInteger
+                      Id="96f930f1-005f-439e-a33e-4065f25cee4b"
+                      name="2147483647"
+                      value="2147483647" />
+                  </upperBound>
+                </inputPin>
+              </invocationActionHasArguments>
+              <invocationActionHasArguments>
+                <inputPin
+                  Id="c783df98-f5c3-4fe3-852e-a1c33696424d"
+                  name="wd"
+                  isLeaf="false"
+                  ordering="Unordered"
+                  isControlType="false"
+                  isControl="false">
+                  <upperBound>
+                    <literalInteger
+                      Id="c8c81e48-8ac5-42d2-9104-f80e7c612c81"
+                      name="2147483647"
+                      value="2147483647" />
+                  </upperBound>
+                </inputPin>
+              </invocationActionHasArguments>
+            </pins>
+          </callBehaviorAction>
+          <objectNode
+            Id="fb283ac5-39b6-48aa-bc7c-e018843ca1e6"
+            name="create vectorForCsvFiles in direictory"
+            isLeaf="false"
+            ordering="Unordered"
+            isControlType="false">
+            <objectFlowTargets>
+              <objectFlow
+                Id="5e56a59d-8f62-4f0d-a2c6-db090b8d5505"
+                guard="vectorForCsvFiles &lt;- list.files(path = &quot;.&quot;, all.files = TRUE,full.names = FALSE, recursive = TRUE)"
+                isLeaf="false"
+                isMulticast="false"
+                isMultireceive="false">
+                <objectNodeMoniker
+                  Id="42499edb-3886-43f0-8f6f-65834c239aed"
+                  LastKnownName="create vectorForCsvFilesInId"
+                  LastKnownLocation="hw1AcitivityDiagram.uml" />
+              </objectFlow>
+            </objectFlowTargets>
+            <upperBound>
+              <literalInteger
+                Id="ed3ccb6e-c322-445f-a28d-43755019ffd3"
+                name="2147483647"
+                value="2147483647" />
+            </upperBound>
+          </objectNode>
+          <objectNode
+            Id="42499edb-3886-43f0-8f6f-65834c239aed"
+            name="create vectorForCsvFilesInId"
+            isLeaf="false"
+            ordering="Unordered"
+            isControlType="false">
+            <objectFlowTargets>
+              <objectFlow
+                Id="e9874b5a-3262-45f8-bf57-51dc0c3d0d3e"
+                guard="listOfDataFramesForCsvFilesInId &lt;- sapply(vectorForCsvFilesInId, read.csv, simplify = FALSE)"
+                isLeaf="false"
+                isMulticast="false"
+                isMultireceive="false">
+                <objectNodeMoniker
+                  Id="85c1a25a-e2dc-463c-ba4a-f3e06642fc02"
+                  LastKnownName="create listOfDataFramesForCsvFilesInId"
+                  LastKnownLocation="hw1AcitivityDiagram.uml" />
+              </objectFlow>
+            </objectFlowTargets>
+            <upperBound>
+              <literalInteger
+                Id="c14bda77-28e3-45d3-9c40-23a85555fc8c"
+                name="2147483647"
+                value="2147483647" />
+            </upperBound>
+          </objectNode>
+          <objectNode
+            Id="bbf662ec-3871-4554-932d-aa11dc965b0d"
+            name="returns the mean of the pollutant across all of the monitors"
+            isLeaf="false"
+            ordering="Unordered"
+            isControlType="false">
+            <objectFlowTargets>
+              <objectFlow
+                Id="dc7c0228-7ffc-4c48-8678-5e2752f06787"
+                isLeaf="false"
+                isMulticast="false"
+                isMultireceive="false">
+                <inputPinMoniker
+                  Id="459bed09-9a20-4cea-a117-30ff224ed605"
+                  LastKnownName="!is.na"
+                  LastKnownLocation="hw1AcitivityDiagram.uml" />
+              </objectFlow>
+            </objectFlowTargets>
+            <upperBound>
+              <literalInteger
+                Id="1a6912b3-af84-44e7-a554-a315612061ba"
+                name="2147483647"
+                value="2147483647" />
+            </upperBound>
+          </objectNode>
+          <objectNode
+            Id="3a427a86-b534-48ed-8808-eb2a645359e6"
+            name="create weighted Mean"
+            isLeaf="false"
+            ordering="Unordered"
+            isControlType="false">
+            <objectFlowTargets>
+              <objectFlow
+                Id="0f93407b-8e7a-4c23-8178-2b9b9502943a"
+                guard="meanPollutantsAcrossMonitors &lt;- sum(weightsParticulateMatterDataFramesForCsvFilesInId * meansParticulateMatterDataFramesForCsvFilesInId)/sum(weightsParticulateMatterDataFramesForCsvFilesInId) "
+                isLeaf="false"
+                isMulticast="false"
+                isMultireceive="false">
+                <objectNodeMoniker
+                  Id="bbf662ec-3871-4554-932d-aa11dc965b0d"
+                  LastKnownName="returns the mean of the pollutant across all of the monitors"
+                  LastKnownLocation="hw1AcitivityDiagram.uml" />
+              </objectFlow>
+            </objectFlowTargets>
+            <upperBound>
+              <literalInteger
+                Id="867b7f87-0926-4a3a-937d-434db1331f21"
+                name="2147483647"
+                value="2147483647" />
+            </upperBound>
+          </objectNode>
+          <callBehaviorAction
+            Id="86c391fc-4c01-4512-a238-89792faab917"
+            name="Set Working Dir to directory"
+            isLeaf="false">
+            <objectFlowTargets>
+              <objectFlow
+                Id="18940a30-af26-4609-b5ea-b23812aa8aaa"
+                isLeaf="false"
+                isMulticast="false"
+                isMultireceive="false">
+                <objectNodeMoniker
+                  Id="fb283ac5-39b6-48aa-bc7c-e018843ca1e6"
+                  LastKnownName="create vectorForCsvFiles in direictory"
+                  LastKnownLocation="hw1AcitivityDiagram.uml" />
+              </objectFlow>
+            </objectFlowTargets>
+            <pins>
+              <invocationActionHasArguments>
+                <inputPin
+                  Id="e0d058f2-f968-4826-b06d-47e84ebddfaf"
+                  name="wd"
+                  isLeaf="false"
+                  ordering="Unordered"
+                  isControlType="false"
+                  isControl="false">
+                  <upperBound>
+                    <literalInteger
+                      Id="4d1fe4b9-2c81-4ed7-af99-c25786cad155"
+                      name="2147483647"
+                      value="2147483647" />
+                  </upperBound>
+                </inputPin>
+              </invocationActionHasArguments>
+            </pins>
+          </callBehaviorAction>
+          <objectNode
+            Id="85c1a25a-e2dc-463c-ba4a-f3e06642fc02"
+            name="create listOfDataFramesForCsvFilesInId"
+            isLeaf="false"
+            ordering="Unordered"
+            isControlType="false">
+            <objectFlowTargets>
+              <objectFlow
+                Id="a154085a-d2be-4309-9f5f-e57b17b57d22"
+                isLeaf="false"
+                isMulticast="false"
+                isMultireceive="false">
+                <objectNodeMoniker
+                  Id="4fa858fb-84db-40d4-bb6e-b6c90af18bbd"
+                  LastKnownName="create  particulateMatterDataFramesForCsvFilesInId"
+                  LastKnownLocation="hw1AcitivityDiagram.uml" />
+              </objectFlow>
+            </objectFlowTargets>
+            <upperBound>
+              <literalInteger
+                Id="b54c34d1-cf4a-482a-99cf-4293438825ef"
+                name="2147483647"
+                value="2147483647" />
+            </upperBound>
+          </objectNode>
+          <objectNode
+            Id="4fa858fb-84db-40d4-bb6e-b6c90af18bbd"
+            name="create  particulateMatterDataFramesForCsvFilesInId"
+            isLeaf="false"
+            ordering="Unordered"
+            isControlType="false">
+            <objectFlowTargets>
+              <objectFlow
+                Id="9f6cf76c-38bf-408d-9223-01a476815b4c"
+                guard="goodParticulateMatterDataFramesForCsvFilesInId &lt;- sapply(particulateMatterDataFramesForCsvFilesInId,function(obs) { !is.na(obs)},simplify = FALSE)"
+                isLeaf="false"
+                isMulticast="false"
+                isMultireceive="false">
+                <objectNodeMoniker
+                  Id="2a2acace-a2b6-4f3b-b5f7-1905accb20fa"
+                  LastKnownName="create  goodParticulateMatterDataFramesForCsvFilesInId"
+                  LastKnownLocation="hw1AcitivityDiagram.uml" />
+              </objectFlow>
+              <objectFlow
+                Id="aadd5711-676c-464a-a4eb-1b11e894ef83"
+                guard="meansParticulateMatterDataFramesForCsvFilesInId &lt;- sapply(particulateMatterDataFramesForCsvFilesInId,colMeans,na.rm=TRUE)"
+                isLeaf="false"
+                isMulticast="false"
+                isMultireceive="false">
+                <objectNodeMoniker
+                  Id="3a427a86-b534-48ed-8808-eb2a645359e6"
+                  LastKnownName="create weighted Mean"
+                  LastKnownLocation="hw1AcitivityDiagram.uml" />
+              </objectFlow>
+            </objectFlowTargets>
+            <upperBound>
+              <literalInteger
+                Id="249dad51-eb55-4975-a326-0a5942aea6f4"
+                name="2147483647"
+                value="2147483647" />
+            </upperBound>
+          </objectNode>
+          <sendSignalAction
+            Id="af080941-514e-419f-abdb-8ad09baad4d4"
+            name="Mean"
+            isLeaf="false" />
+          <objectNode
+            Id="2a2acace-a2b6-4f3b-b5f7-1905accb20fa"
+            name="create  goodParticulateMatterDataFramesForCsvFilesInId"
+            isLeaf="false"
+            ordering="Unordered"
+            isControlType="false">
+            <objectFlowTargets>
+              <objectFlow
+                Id="04bddb81-292f-4f0f-94bc-e380e8eeb7c6"
+                guard="weightsParticulateMatterDataFramesForCsvFilesInId &lt;- sapply(goodParticulateMatterDataFramesForCsvFilesInId,sum)"
+                isLeaf="false"
+                isMulticast="false"
+                isMultireceive="false">
+                <objectNodeMoniker
+                  Id="c0d8df48-8fe6-49a8-af6e-ef0cb2ab3e7c"
+                  LastKnownName="create  weightsParticulateMatterDataFramesForCsvFilesInId"
+                  LastKnownLocation="hw1AcitivityDiagram.uml" />
+              </objectFlow>
+            </objectFlowTargets>
+            <upperBound>
+              <literalInteger
+                Id="8be1e12b-d884-4e77-9ef1-0126c4105b8f"
+                name="2147483647"
+                value="2147483647" />
+            </upperBound>
+          </objectNode>
+          <objectNode
+            Id="c0d8df48-8fe6-49a8-af6e-ef0cb2ab3e7c"
+            name="create  weightsParticulateMatterDataFramesForCsvFilesInId"
+            isLeaf="false"
+            ordering="Unordered"
+            isControlType="false">
+            <objectFlowTargets>
+              <objectFlow
+                Id="7f82e74e-01de-4621-9bf1-c28f7b7edd42"
+                isLeaf="false"
+                isMulticast="false"
+                isMultireceive="false">
+                <objectNodeMoniker
+                  Id="3a427a86-b534-48ed-8808-eb2a645359e6"
+                  LastKnownName="create weighted Mean"
+                  LastKnownLocation="hw1AcitivityDiagram.uml" />
+              </objectFlow>
+            </objectFlowTargets>
+            <upperBound>
+              <literalInteger
+                Id="e2cd4baf-b825-4a83-8eb6-55ab643d75a2"
+                name="2147483647"
+                value="2147483647" />
+            </upperBound>
+          </objectNode>
+        </nodes>
+      </activity>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <activity
+        Id="902c8af1-453b-4d63-8175-7d3c82c3e4b6"
+        name="complete.R"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false"
+        isReentrant="false"
+        isReadOnly="false"
+        isSingleExecution="false">
+        <nodes>
+          <activityParameterNode
+            Id="0c234841-dbc4-444a-b1d2-e9ef1ea2354b"
+            name=" directory"
+            isLeaf="false"
+            ordering="Unordered"
+            isControlType="false">
+            <objectFlowTargets>
+              <objectFlow
+                Id="91a41a4d-fa78-4c4a-98b6-7387a70686a1"
+                guard="setwd(directory)"
+                isLeaf="false"
+                isMulticast="false"
+                isMultireceive="false">
+                <inputPinMoniker
+                  Id="6f574137-1def-4e66-945e-ea4e3db13001"
+                  LastKnownName="wd"
+                  LastKnownLocation="hw1AcitivityDiagram.uml" />
+              </objectFlow>
+            </objectFlowTargets>
+            <upperBound>
+              <literalInteger
+                Id="3ea6447a-6c49-4587-b4ce-a221ff947e20"
+                name="2147483647"
+                value="2147483647" />
+            </upperBound>
+          </activityParameterNode>
+          <activityParameterNode
+            Id="9452bc94-a898-46a2-aff9-6f3e3a18fb78"
+            name="pollutant&lt;-c(&quot;nitrate&quot;,&quot;sulfate&quot;)"
+            isLeaf="false"
+            ordering="Unordered"
+            isControlType="false">
+            <objectFlowTargets>
+              <objectFlow
+                Id="e05ce7e1-2b4e-4511-85f0-382847c8a9f7"
+                isLeaf="false"
+                isMulticast="false"
+                isMultireceive="false">
+                <objectNodeMoniker
+                  Id="9e20c84b-c53a-47d7-89ed-93928712c75a"
+                  LastKnownName="create  particulateMatterCompleteCaseListsForCsvFilesInId "
+                  LastKnownLocation="hw1AcitivityDiagram.uml" />
+              </objectFlow>
+            </objectFlowTargets>
+            <upperBound>
+              <literalInteger
+                Id="ff7ddabe-454e-4023-b2d4-144fa713d51b"
+                name="2147483647"
+                value="2147483647" />
+            </upperBound>
+          </activityParameterNode>
+          <activityParameterNode
+            Id="c4b8dfb9-779a-4b44-a34e-990c542578b3"
+            name="id"
+            isLeaf="false"
+            ordering="Unordered"
+            isControlType="false">
+            <description>a vector monitor ID numbers</description>
+            <objectFlowTargets>
+              <objectFlow
+                Id="ff706663-5d2d-4d3a-b320-33b16001d37b"
+                guard="vectorForCsvFilesInId &lt;- vectorForCsvFiles [id]"
+                isLeaf="false"
+                isMulticast="false"
+                isMultireceive="false">
+                <objectNodeMoniker
+                  Id="2959d201-6c66-4f80-a42b-0b26b2adbf5e"
+                  LastKnownName="create vectorForCsvFilesInId"
+                  LastKnownLocation="hw1AcitivityDiagram.uml" />
+              </objectFlow>
+            </objectFlowTargets>
+            <upperBound>
+              <literalInteger
+                Id="00ba0fd7-74fc-4f85-bc83-80200bc9a13a"
+                name="2147483647"
+                value="2147483647" />
+            </upperBound>
+          </activityParameterNode>
+          <callBehaviorAction
+            Id="0b04d13b-bec4-4e3c-aa9a-e854a6d6f835"
+            name="Toggle  Working Directory"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="5cb86fde-74b6-4301-9c47-779fee010566"
+                isLeaf="false">
+                <callBehaviorActionMoniker
+                  Id="d43c8bd9-2570-44ca-a532-0e852f873f15"
+                  LastKnownName="Set Working Dir to directory"
+                  LastKnownLocation="hw1AcitivityDiagram.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+            <pins>
+              <callActionHasResults>
+                <outputPin
+                  Id="cd770d91-abcf-4208-b162-639929ef1cbb"
+                  name="wd"
+                  isLeaf="false"
+                  ordering="Unordered"
+                  isControlType="false"
+                  isControl="false">
+                  <objectFlowTargets>
+                    <objectFlow
+                      Id="c14177e6-8867-4fc2-8c9c-b426e6c960cc"
+                      guard="initialDirectory &lt;- getwd()"
+                      isLeaf="false"
+                      isMulticast="false"
+                      isMultireceive="false">
+                      <inputPinMoniker
+                        Id="2a03bb74-4f20-43f9-a6b4-44691474fe70"
+                        LastKnownName="initialDirectory"
+                        LastKnownLocation="hw1AcitivityDiagram.uml" />
+                    </objectFlow>
+                  </objectFlowTargets>
+                  <upperBound>
+                    <literalInteger
+                      Id="febe998a-f883-4ccd-8398-7f15b5fe7c99"
+                      name="2147483647"
+                      value="2147483647" />
+                  </upperBound>
+                </outputPin>
+              </callActionHasResults>
+              <callActionHasResults>
+                <outputPin
+                  Id="a4636aeb-f4b4-44ae-94f0-47332175d927"
+                  name="return fuction value"
+                  isLeaf="false"
+                  ordering="Unordered"
+                  isControlType="false"
+                  isControl="false">
+                  <objectFlowTargets>
+                    <objectFlow
+                      Id="8b185252-708f-4b53-a91f-161fa7e02a3f"
+                      isLeaf="false"
+                      isMulticast="false"
+                      isMultireceive="false">
+                      <sendSignalActionMoniker
+                        Id="4ccaf241-8315-467a-9d3d-1d2415b7782b"
+                        LastKnownName="Counts"
+                        LastKnownLocation="hw1AcitivityDiagram.uml" />
+                    </objectFlow>
+                  </objectFlowTargets>
+                  <upperBound>
+                    <literalInteger
+                      Id="e3cd0ad7-be29-4f25-9bd0-777ec71adcd5"
+                      name="2147483647"
+                      value="2147483647" />
+                  </upperBound>
+                </outputPin>
+              </callActionHasResults>
+              <callActionHasResults>
+                <outputPin
+                  Id="1f4adfd9-d79a-4239-adac-f21141f46cea"
+                  name="initialDir"
+                  isLeaf="false"
+                  ordering="Unordered"
+                  isControlType="false"
+                  isControl="false">
+                  <objectFlowTargets>
+                    <objectFlow
+                      Id="c864e911-a848-4c4d-8b13-080281da0b78"
+                      guard="setwd(initialDirectory)"
+                      isLeaf="false"
+                      isMulticast="false"
+                      isMultireceive="false">
+                      <inputPinMoniker
+                        Id="12582952-2ca2-4a89-b61f-a93582d3c5f7"
+                        LastKnownName="wd"
+                        LastKnownLocation="hw1AcitivityDiagram.uml" />
+                    </objectFlow>
+                  </objectFlowTargets>
+                  <upperBound>
+                    <literalInteger
+                      Id="b73c00c5-db8a-4924-89bf-e922ee54da0a"
+                      name="2147483647"
+                      value="2147483647" />
+                  </upperBound>
+                </outputPin>
+              </callActionHasResults>
+              <invocationActionHasArguments>
+                <inputPin
+                  Id="2a03bb74-4f20-43f9-a6b4-44691474fe70"
+                  name="initialDirectory"
+                  isLeaf="false"
+                  ordering="Unordered"
+                  isControlType="false"
+                  isControl="false">
+                  <upperBound>
+                    <literalInteger
+                      Id="1c11d412-8a29-49d6-a801-1a3c57a95fdb"
+                      name="2147483647"
+                      value="2147483647" />
+                  </upperBound>
+                </inputPin>
+              </invocationActionHasArguments>
+              <invocationActionHasArguments>
+                <inputPin
+                  Id="e6a012a3-71d0-40e8-a0b8-e516da08c130"
+                  name="!is.na"
+                  isLeaf="false"
+                  ordering="Unordered"
+                  isControlType="false"
+                  isControl="false">
+                  <upperBound>
+                    <literalInteger
+                      Id="43fa546f-1447-42cf-96f1-2399242e28d3"
+                      name="2147483647"
+                      value="2147483647" />
+                  </upperBound>
+                </inputPin>
+              </invocationActionHasArguments>
+              <invocationActionHasArguments>
+                <inputPin
+                  Id="12582952-2ca2-4a89-b61f-a93582d3c5f7"
+                  name="wd"
+                  isLeaf="false"
+                  ordering="Unordered"
+                  isControlType="false"
+                  isControl="false">
+                  <upperBound>
+                    <literalInteger
+                      Id="c5684342-c3a4-44f7-8702-bb9d24e97781"
+                      name="2147483647"
+                      value="2147483647" />
+                  </upperBound>
+                </inputPin>
+              </invocationActionHasArguments>
+            </pins>
+          </callBehaviorAction>
+          <objectNode
+            Id="c0169167-eda1-42f8-b5c5-7f79454319c1"
+            name="create vectorForCsvFiles in direictory"
+            isLeaf="false"
+            ordering="Unordered"
+            isControlType="false">
+            <objectFlowTargets>
+              <objectFlow
+                Id="8f073928-81ca-4515-9b13-823e6a0810de"
+                guard="vectorForCsvFiles &lt;- list.files(path = &quot;.&quot;, all.files = TRUE,full.names = FALSE, recursive = TRUE)"
+                isLeaf="false"
+                isMulticast="false"
+                isMultireceive="false">
+                <objectNodeMoniker
+                  Id="2959d201-6c66-4f80-a42b-0b26b2adbf5e"
+                  LastKnownName="create vectorForCsvFilesInId"
+                  LastKnownLocation="hw1AcitivityDiagram.uml" />
+              </objectFlow>
+            </objectFlowTargets>
+            <upperBound>
+              <literalInteger
+                Id="2a09680f-4b6f-432a-99b1-93e928108394"
+                name="2147483647"
+                value="2147483647" />
+            </upperBound>
+          </objectNode>
+          <objectNode
+            Id="2959d201-6c66-4f80-a42b-0b26b2adbf5e"
+            name="create vectorForCsvFilesInId"
+            isLeaf="false"
+            ordering="Unordered"
+            isControlType="false">
+            <objectFlowTargets>
+              <objectFlow
+                Id="8d512d38-5bc9-48aa-824b-3382f9cd586a"
+                guard="listOfDataFramesForCsvFilesInId &lt;- sapply(vectorForCsvFilesInId, read.csv, simplify = FALSE)"
+                isLeaf="false"
+                isMulticast="false"
+                isMultireceive="false">
+                <objectNodeMoniker
+                  Id="d404e487-da9a-4a97-bc21-72b99a4168b9"
+                  LastKnownName="create listOfDataFramesForCsvFilesInId"
+                  LastKnownLocation="hw1AcitivityDiagram.uml" />
+              </objectFlow>
+            </objectFlowTargets>
+            <upperBound>
+              <literalInteger
+                Id="d3e8050f-3a95-441b-826d-c592488bcc97"
+                name="2147483647"
+                value="2147483647" />
+            </upperBound>
+          </objectNode>
+          <objectNode
+            Id="15868cd2-dfc0-4ae6-841c-30125a962821"
+            name="returns the number of Good Particulate Matter Complete Case DataFrames Fo rCsv Files In Id"
+            isLeaf="false"
+            ordering="Unordered"
+            isControlType="false">
+            <objectFlowTargets>
+              <objectFlow
+                Id="866e7aeb-156b-422b-8b54-cd2e66b4786c"
+                isLeaf="false"
+                isMulticast="false"
+                isMultireceive="false">
+                <inputPinMoniker
+                  Id="e6a012a3-71d0-40e8-a0b8-e516da08c130"
+                  LastKnownName="!is.na"
+                  LastKnownLocation="hw1AcitivityDiagram.uml" />
+              </objectFlow>
+            </objectFlowTargets>
+            <upperBound>
+              <literalInteger
+                Id="3b6dca35-dd0c-4356-97c7-8700694b3215"
+                name="2147483647"
+                value="2147483647" />
+            </upperBound>
+          </objectNode>
+          <objectNode
+            Id="e345ee00-0e63-4268-81d4-28e584165dfb"
+            name="Format"
+            isLeaf="false"
+            ordering="Unordered"
+            isControlType="false">
+            <objectFlowTargets>
+              <objectFlow
+                Id="0461bebb-e39b-4a86-9231-068fa2c5c0e3"
+                isLeaf="false"
+                isMulticast="false"
+                isMultireceive="false">
+                <objectNodeMoniker
+                  Id="15868cd2-dfc0-4ae6-841c-30125a962821"
+                  LastKnownName="returns the number of Good Particulate Matter Complete Case DataFrames Fo rCsv Files In Id"
+                  LastKnownLocation="hw1AcitivityDiagram.uml" />
+              </objectFlow>
+            </objectFlowTargets>
+            <upperBound>
+              <literalInteger
+                Id="c87b8ccd-e7ab-4ae8-8509-6ff5348adab1"
+                name="2147483647"
+                value="2147483647" />
+            </upperBound>
+          </objectNode>
+          <callBehaviorAction
+            Id="d43c8bd9-2570-44ca-a532-0e852f873f15"
+            name="Set Working Dir to directory"
+            isLeaf="false">
+            <objectFlowTargets>
+              <objectFlow
+                Id="df7e9fc9-e307-435d-8da4-277b7a9c4e5d"
+                isLeaf="false"
+                isMulticast="false"
+                isMultireceive="false">
+                <objectNodeMoniker
+                  Id="c0169167-eda1-42f8-b5c5-7f79454319c1"
+                  LastKnownName="create vectorForCsvFiles in direictory"
+                  LastKnownLocation="hw1AcitivityDiagram.uml" />
+              </objectFlow>
+            </objectFlowTargets>
+            <pins>
+              <invocationActionHasArguments>
+                <inputPin
+                  Id="6f574137-1def-4e66-945e-ea4e3db13001"
+                  name="wd"
+                  isLeaf="false"
+                  ordering="Unordered"
+                  isControlType="false"
+                  isControl="false">
+                  <upperBound>
+                    <literalInteger
+                      Id="1460f6eb-a58a-4fd5-985f-5bfab02d7f80"
+                      name="2147483647"
+                      value="2147483647" />
+                  </upperBound>
+                </inputPin>
+              </invocationActionHasArguments>
+            </pins>
+          </callBehaviorAction>
+          <objectNode
+            Id="d404e487-da9a-4a97-bc21-72b99a4168b9"
+            name="create listOfDataFramesForCsvFilesInId"
+            isLeaf="false"
+            ordering="Unordered"
+            isControlType="false">
+            <objectFlowTargets>
+              <objectFlow
+                Id="867fce52-afe9-4a32-85c1-44dbb3ac4528"
+                isLeaf="false"
+                isMulticast="false"
+                isMultireceive="false">
+                <objectNodeMoniker
+                  Id="9e20c84b-c53a-47d7-89ed-93928712c75a"
+                  LastKnownName="create  particulateMatterCompleteCaseListsForCsvFilesInId "
+                  LastKnownLocation="hw1AcitivityDiagram.uml" />
+              </objectFlow>
+            </objectFlowTargets>
+            <upperBound>
+              <literalInteger
+                Id="a3b90c05-eb29-4992-a3ef-129f9891edfe"
+                name="2147483647"
+                value="2147483647" />
+            </upperBound>
+          </objectNode>
+          <objectNode
+            Id="9e20c84b-c53a-47d7-89ed-93928712c75a"
+            name="create  particulateMatterCompleteCaseListsForCsvFilesInId "
+            isLeaf="false"
+            ordering="Unordered"
+            isControlType="false">
+            <objectFlowTargets>
+              <objectFlow
+                Id="7f43eebe-079b-4598-9e65-11e0125b2660"
+                guard="numGoodParticulateMatterCompleteCaseListsForCsvFilesInId &lt;- sapply(particulateMatterCompleteCaseListsForCsvFilesInId ,function(list) {sum( lengths(list))},simplify = FALSE)"
+                isLeaf="false"
+                isMulticast="false"
+                isMultireceive="false">
+                <objectNodeMoniker
+                  Id="00566eb7-4ea5-468c-aae2-0eab2ffcf48f"
+                  LastKnownName="create numGoodInParticulateMatterCompleteCaseListsForCsvFilesInId ( count each list's field rows)"
+                  LastKnownLocation="hw1AcitivityDiagram.uml" />
+              </objectFlow>
+            </objectFlowTargets>
+            <upperBound>
+              <literalInteger
+                Id="2707b67b-9c1c-4195-b6ac-49eff87b5157"
+                name="2147483647"
+                value="2147483647" />
+            </upperBound>
+          </objectNode>
+          <sendSignalAction
+            Id="4ccaf241-8315-467a-9d3d-1d2415b7782b"
+            name="Counts"
+            isLeaf="false" />
+          <objectNode
+            Id="00566eb7-4ea5-468c-aae2-0eab2ffcf48f"
+            name="create numGoodInParticulateMatterCompleteCaseListsForCsvFilesInId ( count each list's field rows)"
+            isLeaf="false"
+            ordering="Unordered"
+            isControlType="false">
+            <objectFlowTargets>
+              <objectFlow
+                Id="181f078d-1836-4d5c-8513-d2b804dff41b"
+                guard="numGoodParticulateMatterCompleteCaseDataFrameForCsvFilesInId &lt;- rev(stack(data.frame(numGoodParticulateMatterCompleteCaseListsForCsvFilesInId)))"
+                isLeaf="false"
+                isMulticast="false"
+                isMultireceive="false">
+                <objectNodeMoniker
+                  Id="8bfad5b7-39fb-4c9e-96c2-a14dd39daa0d"
+                  LastKnownName="create  numGoodParticulateMatterCompleteCaseDataFrameForCsvFilesInId "
+                  LastKnownLocation="hw1AcitivityDiagram.uml" />
+              </objectFlow>
+            </objectFlowTargets>
+            <upperBound>
+              <literalInteger
+                Id="4671781e-5462-42cb-971e-c24431ed9441"
+                name="2147483647"
+                value="2147483647" />
+            </upperBound>
+          </objectNode>
+          <objectNode
+            Id="8bfad5b7-39fb-4c9e-96c2-a14dd39daa0d"
+            name="create  numGoodParticulateMatterCompleteCaseDataFrameForCsvFilesInId "
+            isLeaf="false"
+            ordering="Unordered"
+            isControlType="false">
+            <objectFlowTargets>
+              <objectFlow
+                Id="bd5c9640-5226-4f03-9239-55cd59c806f8"
+                isLeaf="false"
+                isMulticast="false"
+                isMultireceive="false">
+                <objectNodeMoniker
+                  Id="e345ee00-0e63-4268-81d4-28e584165dfb"
+                  LastKnownName="Format"
+                  LastKnownLocation="hw1AcitivityDiagram.uml" />
+              </objectFlow>
+            </objectFlowTargets>
+            <upperBound>
+              <literalInteger
+                Id="92fe2f07-cb75-4301-b755-91e54cb83dd7"
                 name="2147483647"
                 value="2147483647" />
             </upperBound>
