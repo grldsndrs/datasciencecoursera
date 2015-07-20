@@ -6,30 +6,25 @@
   <ownedCommentsInternal>
     <comment
       Id="5fca6c00-63f0-4870-86d2-eefd2c5fedc2">
-      <body>particulateMatterCompleteCaseListsForCsvFilesInId &lt;- 
+      <body>numGoodParticulateMatterCompleteCaseListsForCsvFilesInId &lt;- 
     sapply(vectorForCsvFilesInId
            ,function(file) {
-               pollutantsInListOfDataFramesForCsvFilesInId &lt;-
-                 sapply(pollutant
-                      ,function(p) { 
-                        listOfDataFramesForCsvFilesInId[[file]][p]
-               },simplify = FALSE)
-                      
-               completeCases &lt;- 
-                 sapply(pollutantsInListOfDataFramesForCsvFilesInId
-                      ,function(p) { 
-                        complete.cases(p)
-               },simplify = FALSE)
+               pollutantsDataFrameForCsvFileInId &lt;-
+                 listOfDataFramesForCsvFilesInId[[file]][pollutant]
                
-               sapply(pollutant
-                      ,function(p) { 
-                        pollutantsInListOfDataFramesForCsvFilesInId[[p]][completeCases[[p]],]
-                      },simplify = FALSE)
+               completeCases &lt;- 
+                 complete.cases(pollutantsDataFrameForCsvFileInId[pollutant])
+               
+               particulateMatterCompleteCaseListsForCsvFilesInId &lt;-
+                 pollutantsDataFrameForCsvFileInId[pollutant][completeCases,]
+               
+               nrow(particulateMatterCompleteCaseListsForCsvFilesInId[pollutant])
+
              },simplify = FALSE)</body>
       <annotatedElements>
         <objectNodeMoniker
           Id="9e20c84b-c53a-47d7-89ed-93928712c75a"
-          LastKnownName="create  particulateMatterCompleteCaseListsForCsvFilesInId "
+          LastKnownName="create  numGoodParticulateMatterCompleteCaseListsForCsvFilesInId "
           LastKnownLocation="hw1AcitivityDiagram.uml" />
       </annotatedElements>
     </comment>
@@ -1115,7 +1110,7 @@
                 isMultireceive="false">
                 <objectNodeMoniker
                   Id="9e20c84b-c53a-47d7-89ed-93928712c75a"
-                  LastKnownName="create  particulateMatterCompleteCaseListsForCsvFilesInId "
+                  LastKnownName="create  numGoodParticulateMatterCompleteCaseListsForCsvFilesInId "
                   LastKnownLocation="hw1AcitivityDiagram.uml" />
               </objectFlow>
             </objectFlowTargets>
@@ -1455,7 +1450,7 @@
                 isMultireceive="false">
                 <objectNodeMoniker
                   Id="9e20c84b-c53a-47d7-89ed-93928712c75a"
-                  LastKnownName="create  particulateMatterCompleteCaseListsForCsvFilesInId "
+                  LastKnownName="create  numGoodParticulateMatterCompleteCaseListsForCsvFilesInId "
                   LastKnownLocation="hw1AcitivityDiagram.uml" />
               </objectFlow>
             </objectFlowTargets>
@@ -1468,20 +1463,20 @@
           </objectNode>
           <objectNode
             Id="9e20c84b-c53a-47d7-89ed-93928712c75a"
-            name="create  particulateMatterCompleteCaseListsForCsvFilesInId "
+            name="create  numGoodParticulateMatterCompleteCaseListsForCsvFilesInId "
             isLeaf="false"
             ordering="Unordered"
             isControlType="false">
             <objectFlowTargets>
               <objectFlow
                 Id="7f43eebe-079b-4598-9e65-11e0125b2660"
-                guard="numGoodParticulateMatterCompleteCaseListsForCsvFilesInId &lt;- sapply(particulateMatterCompleteCaseListsForCsvFilesInId ,function(list) {sum( lengths(list))},simplify = FALSE)"
+                guard="numGoodParticulateMatterCompleteCaseDataFramesForCsvFilesInId &lt;- rev(stack(data.frame(numGoodParticulateMatterCompleteCaseListsForCsvFilesInId)))"
                 isLeaf="false"
                 isMulticast="false"
                 isMultireceive="false">
                 <objectNodeMoniker
                   Id="00566eb7-4ea5-468c-aae2-0eab2ffcf48f"
-                  LastKnownName="create numGoodInParticulateMatterCompleteCaseListsForCsvFilesInId ( count each list's field rows)"
+                  LastKnownName="create numGoodParticulateMatterCompleteCaseDataFramesForCsvFilesInId"
                   LastKnownLocation="hw1AcitivityDiagram.uml" />
               </objectFlow>
             </objectFlowTargets>
@@ -1498,39 +1493,13 @@
             isLeaf="false" />
           <objectNode
             Id="00566eb7-4ea5-468c-aae2-0eab2ffcf48f"
-            name="create numGoodInParticulateMatterCompleteCaseListsForCsvFilesInId ( count each list's field rows)"
+            name="create numGoodParticulateMatterCompleteCaseDataFramesForCsvFilesInId"
             isLeaf="false"
             ordering="Unordered"
             isControlType="false">
             <objectFlowTargets>
               <objectFlow
-                Id="181f078d-1836-4d5c-8513-d2b804dff41b"
-                guard="numGoodParticulateMatterCompleteCaseDataFrameForCsvFilesInId &lt;- rev(stack(data.frame(numGoodParticulateMatterCompleteCaseListsForCsvFilesInId)))"
-                isLeaf="false"
-                isMulticast="false"
-                isMultireceive="false">
-                <objectNodeMoniker
-                  Id="8bfad5b7-39fb-4c9e-96c2-a14dd39daa0d"
-                  LastKnownName="create  numGoodParticulateMatterCompleteCaseDataFrameForCsvFilesInId "
-                  LastKnownLocation="hw1AcitivityDiagram.uml" />
-              </objectFlow>
-            </objectFlowTargets>
-            <upperBound>
-              <literalInteger
-                Id="4671781e-5462-42cb-971e-c24431ed9441"
-                name="2147483647"
-                value="2147483647" />
-            </upperBound>
-          </objectNode>
-          <objectNode
-            Id="8bfad5b7-39fb-4c9e-96c2-a14dd39daa0d"
-            name="create  numGoodParticulateMatterCompleteCaseDataFrameForCsvFilesInId "
-            isLeaf="false"
-            ordering="Unordered"
-            isControlType="false">
-            <objectFlowTargets>
-              <objectFlow
-                Id="bd5c9640-5226-4f03-9239-55cd59c806f8"
+                Id="0a03b5d0-2d3a-42df-b2b7-b243b65b9ce6"
                 isLeaf="false"
                 isMulticast="false"
                 isMultireceive="false">
@@ -1542,7 +1511,7 @@
             </objectFlowTargets>
             <upperBound>
               <literalInteger
-                Id="92fe2f07-cb75-4301-b755-91e54cb83dd7"
+                Id="4671781e-5462-42cb-971e-c24431ed9441"
                 name="2147483647"
                 value="2147483647" />
             </upperBound>

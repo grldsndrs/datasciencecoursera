@@ -3,28 +3,23 @@
   <ownedCommentsInternal>
     <comment Id="3955a837-e19e-49bc-81a0-92799c20bea5">
       <elementDefinition Id="5fca6c00-63f0-4870-86d2-eefd2c5fedc2" />
-      <body>particulateMatterCompleteCaseListsForCsvFilesInId &lt;- 
+      <body>numGoodParticulateMatterCompleteCaseListsForCsvFilesInId &lt;- 
     sapply(vectorForCsvFilesInId
            ,function(file) {
-               pollutantsInListOfDataFramesForCsvFilesInId &lt;-
-                 sapply(pollutant
-                      ,function(p) { 
-                        listOfDataFramesForCsvFilesInId[[file]][p]
-               },simplify = FALSE)
-                      
-               completeCases &lt;- 
-                 sapply(pollutantsInListOfDataFramesForCsvFilesInId
-                      ,function(p) { 
-                        complete.cases(p)
-               },simplify = FALSE)
+               pollutantsDataFrameForCsvFileInId &lt;-
+                 listOfDataFramesForCsvFilesInId[[file]][pollutant]
                
-               sapply(pollutant
-                      ,function(p) { 
-                        pollutantsInListOfDataFramesForCsvFilesInId[[p]][completeCases[[p]],]
-                      },simplify = FALSE)
+               completeCases &lt;- 
+                 complete.cases(pollutantsDataFrameForCsvFileInId[pollutant])
+               
+               particulateMatterCompleteCaseListsForCsvFilesInId &lt;-
+                 pollutantsDataFrameForCsvFileInId[pollutant][completeCases,]
+               
+               nrow(particulateMatterCompleteCaseListsForCsvFilesInId[pollutant])
+
              },simplify = FALSE)</body>
       <annotatedElements>
-        <objectNodeMoniker Id="8f66c003-2a07-4cfd-b44a-ef95d90f6d62" LastKnownName="create  particulateMatterCompleteCaseListsForCsvFilesInId " />
+        <objectNodeMoniker Id="8f66c003-2a07-4cfd-b44a-ef95d90f6d62" LastKnownName="create  numGoodParticulateMatterCompleteCaseListsForCsvFilesInId " />
       </annotatedElements>
     </comment>
     <comment Id="a2785237-3856-4234-a568-6505214a9bdf">
@@ -79,7 +74,7 @@
             <elementDefinition Id="9452bc94-a898-46a2-aff9-6f3e3a18fb78" />
             <objectFlowTargets>
               <objectFlow Id="826bcd6a-8929-47d6-aa66-8e39bc869b92" isLeaf="false" isMulticast="false" isMultireceive="false">
-                <objectNodeMoniker Id="8f66c003-2a07-4cfd-b44a-ef95d90f6d62" LastKnownName="create  particulateMatterCompleteCaseListsForCsvFilesInId " />
+                <objectNodeMoniker Id="8f66c003-2a07-4cfd-b44a-ef95d90f6d62" LastKnownName="create  numGoodParticulateMatterCompleteCaseListsForCsvFilesInId " />
                 <elementDefinition Id="e05ce7e1-2b4e-4511-85f0-382847c8a9f7" />
               </objectFlow>
             </objectFlowTargets>
@@ -274,7 +269,7 @@
             <elementDefinition Id="d404e487-da9a-4a97-bc21-72b99a4168b9" />
             <objectFlowTargets>
               <objectFlow Id="5b8dcec0-8b50-4d2b-9b3d-f4d76eda3a80" isLeaf="false" isMulticast="false" isMultireceive="false">
-                <objectNodeMoniker Id="8f66c003-2a07-4cfd-b44a-ef95d90f6d62" LastKnownName="create  particulateMatterCompleteCaseListsForCsvFilesInId " />
+                <objectNodeMoniker Id="8f66c003-2a07-4cfd-b44a-ef95d90f6d62" LastKnownName="create  numGoodParticulateMatterCompleteCaseListsForCsvFilesInId " />
                 <elementDefinition Id="867fce52-afe9-4a32-85c1-44dbb3ac4528" />
               </objectFlow>
             </objectFlowTargets>
@@ -284,11 +279,11 @@
               </literalInteger>
             </upperBound>
           </objectNode>
-          <objectNode Id="8f66c003-2a07-4cfd-b44a-ef95d90f6d62" name="create  particulateMatterCompleteCaseListsForCsvFilesInId " isLeaf="false" ordering="Unordered" isControlType="false">
+          <objectNode Id="8f66c003-2a07-4cfd-b44a-ef95d90f6d62" name="create  numGoodParticulateMatterCompleteCaseListsForCsvFilesInId " isLeaf="false" ordering="Unordered" isControlType="false">
             <elementDefinition Id="9e20c84b-c53a-47d7-89ed-93928712c75a" />
             <objectFlowTargets>
-              <objectFlow Id="ad89fda8-f889-4593-bb3c-c8dcfbb4b798" guard="numGoodParticulateMatterCompleteCaseListsForCsvFilesInId &lt;- sapply(particulateMatterCompleteCaseListsForCsvFilesInId ,function(list) {sum( lengths(list))},simplify = FALSE)" isLeaf="false" isMulticast="false" isMultireceive="false">
-                <objectNodeMoniker Id="d9b6ee52-15a4-447d-99f9-cf2205f285cd" LastKnownName="create numGoodInParticulateMatterCompleteCaseListsForCsvFilesInId ( count each list's field rows)" />
+              <objectFlow Id="ad89fda8-f889-4593-bb3c-c8dcfbb4b798" guard="numGoodParticulateMatterCompleteCaseDataFramesForCsvFilesInId &lt;- rev(stack(data.frame(numGoodParticulateMatterCompleteCaseListsForCsvFilesInId)))" isLeaf="false" isMulticast="false" isMultireceive="false">
+                <objectNodeMoniker Id="d9b6ee52-15a4-447d-99f9-cf2205f285cd" LastKnownName="create numGoodParticulateMatterCompleteCaseDataFramesForCsvFilesInId" />
                 <elementDefinition Id="7f43eebe-079b-4598-9e65-11e0125b2660" />
               </objectFlow>
             </objectFlowTargets>
@@ -301,31 +296,17 @@
           <sendSignalAction Id="e8a67d97-1ee6-4dd1-bd65-17c2e44bd2c0" name="Counts" isLeaf="false">
             <elementDefinition Id="4ccaf241-8315-467a-9d3d-1d2415b7782b" />
           </sendSignalAction>
-          <objectNode Id="d9b6ee52-15a4-447d-99f9-cf2205f285cd" name="create numGoodInParticulateMatterCompleteCaseListsForCsvFilesInId ( count each list's field rows)" isLeaf="false" ordering="Unordered" isControlType="false">
+          <objectNode Id="d9b6ee52-15a4-447d-99f9-cf2205f285cd" name="create numGoodParticulateMatterCompleteCaseDataFramesForCsvFilesInId" isLeaf="false" ordering="Unordered" isControlType="false">
             <elementDefinition Id="00566eb7-4ea5-468c-aae2-0eab2ffcf48f" />
             <objectFlowTargets>
-              <objectFlow Id="0e5db246-dbcb-424e-98d8-f0013c4d2240" guard="numGoodParticulateMatterCompleteCaseDataFrameForCsvFilesInId &lt;- rev(stack(data.frame(numGoodParticulateMatterCompleteCaseListsForCsvFilesInId)))" isLeaf="false" isMulticast="false" isMultireceive="false">
-                <objectNodeMoniker Id="29954130-9585-48c1-9c15-94686a920a52" LastKnownName="create  numGoodParticulateMatterCompleteCaseDataFrameForCsvFilesInId " />
-                <elementDefinition Id="181f078d-1836-4d5c-8513-d2b804dff41b" />
+              <objectFlow Id="55a8d326-e7ce-43b3-a5cf-76dc1decbbaa" isLeaf="false" isMulticast="false" isMultireceive="false">
+                <objectNodeMoniker Id="3e9f24ff-dab4-433e-afd7-6a1015b82911" LastKnownName="Format" />
+                <elementDefinition Id="0a03b5d0-2d3a-42df-b2b7-b243b65b9ce6" />
               </objectFlow>
             </objectFlowTargets>
             <upperBound>
               <literalInteger Id="165a73ad-5e35-4574-bbf4-3e983da5a9e5" name="2147483647" value="2147483647">
                 <elementDefinition Id="4671781e-5462-42cb-971e-c24431ed9441" />
-              </literalInteger>
-            </upperBound>
-          </objectNode>
-          <objectNode Id="29954130-9585-48c1-9c15-94686a920a52" name="create  numGoodParticulateMatterCompleteCaseDataFrameForCsvFilesInId " isLeaf="false" ordering="Unordered" isControlType="false">
-            <elementDefinition Id="8bfad5b7-39fb-4c9e-96c2-a14dd39daa0d" />
-            <objectFlowTargets>
-              <objectFlow Id="e0ded2e2-0606-4ae7-ac42-d47123492b2a" isLeaf="false" isMulticast="false" isMultireceive="false">
-                <objectNodeMoniker Id="3e9f24ff-dab4-433e-afd7-6a1015b82911" LastKnownName="Format" />
-                <elementDefinition Id="bd5c9640-5226-4f03-9239-55cd59c806f8" />
-              </objectFlow>
-            </objectFlowTargets>
-            <upperBound>
-              <literalInteger Id="0664311d-6616-4687-99e1-9b3bcf57615d" name="2147483647" value="2147483647">
-                <elementDefinition Id="92fe2f07-cb75-4301-b755-91e54cb83dd7" />
               </literalInteger>
             </upperBound>
           </objectNode>

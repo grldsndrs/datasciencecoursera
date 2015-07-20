@@ -26,30 +26,22 @@ complete <- function(directory, id = 1:332) {
                                             , simplify = FALSE)
   pollutant<-c("nitrate","sulfate")
   
-  particulateMatterCompleteCaseListsForCsvFilesInId <- 
+  numGoodParticulateMatterCompleteCaseListsForCsvFilesInId <- 
     sapply(vectorForCsvFilesInId
            ,function(file) {
-               pollutantsInListOfDataFramesForCsvFilesInId <-
-                 sapply(pollutant
-                      ,function(p) { 
-                        listOfDataFramesForCsvFilesInId[[file]][p]
-               },simplify = FALSE)
-                      
-               completeCases <- 
-                 sapply(pollutantsInListOfDataFramesForCsvFilesInId
-                      ,function(p) { 
-                        complete.cases(p)
-               },simplify = FALSE)
+               pollutantsDataFrameForCsvFileInId <-
+                 listOfDataFramesForCsvFilesInId[[file]][pollutant]
                
-               sapply(pollutant
-                      ,function(p) { 
-                        pollutantsInListOfDataFramesForCsvFilesInId[[p]][completeCases[[p]],]
-                      },simplify = FALSE)
+               completeCases <- 
+                 complete.cases(pollutantsDataFrameForCsvFileInId[pollutant])
+               
+               particulateMatterCompleteCaseListsForCsvFilesInId <-
+                 pollutantsDataFrameForCsvFileInId[pollutant][completeCases,]
+               
+               nrow(particulateMatterCompleteCaseListsForCsvFilesInId[pollutant])
+
              },simplify = FALSE)
   
-  numGoodParticulateMatterCompleteCaseListsForCsvFilesInId <- 
-    sapply(particulateMatterCompleteCaseListsForCsvFilesInId 
-           ,function(list) {sum( lengths(list))},simplify = FALSE)
   
   numGoodParticulateMatterCompleteCaseDataFramesForCsvFilesInId <- 
     rev(stack(data.frame(numGoodParticulateMatterCompleteCaseListsForCsvFilesInId)))
