@@ -1,0 +1,265 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<activityDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 12.5" name="UMLActivityDiagram1">
+  <activityRootModelMoniker Id="42d0b53c-b43f-4108-b385-558fc9a67395" />
+  <nestedChildShapes>
+    <activityParameterNodeShape Id="cdf02518-e4a4-4981-8c61-5dcc026eabf9" absoluteBounds="5.625, 3.375, 1.25, 0.375" customColor="White">
+      <activityParameterNodeMoniker Id="64c139f3-612c-434d-a23e-60b2ca9e562e" LastKnownName=" directory" />
+    </activityParameterNodeShape>
+    <activityParameterNodeShape Id="789ebb21-297b-4b70-a852-51ce46ae84ac" absoluteBounds="5.625, 7.125, 1.25, 0.375" customColor="White">
+      <activityParameterNodeMoniker Id="0ccf7356-3790-44f1-a000-10aaeeb74e1e" LastKnownName="pollutant" />
+    </activityParameterNodeShape>
+    <activityParameterNodeShape Id="13abde94-484e-4afb-ab79-877b0978a8bb" absoluteBounds="5.625, 5.375, 1.25, 0.375" customColor="White">
+      <activityParameterNodeMoniker Id="6300ee92-7aad-438c-816b-53d5ce2c5f48" LastKnownName="id" />
+    </activityParameterNodeShape>
+    <callBehaviorActionShape Id="ef9b376a-b283-497f-a437-d25160b2419f" absoluteBounds="0.75, 1.625, 2, 0.875" customColor="161, 199, 231">
+      <callBehaviorActionMoniker Id="917a54bb-9deb-4ccf-a82e-0424803fa5f6" LastKnownName="Toggle  Working Directory" />
+      <relativeChildShapes>
+        <outputPinShape Id="c02c87d2-1fe7-4207-9834-63f9ba917f4f" absoluteBounds="0.6, 1.78125, 0.15, 0.15">
+          <outputPinMoniker Id="da4cdfc7-1f22-4f53-a5a4-1d22a8ac0b6c" LastKnownName="wd" />
+          <relativeChildShapes />
+          <moveableDecoratorHostShapes>
+            <moveableDecoratorHostShape manuallyPlaced="true" absoluteBounds="0.53125, 1.5625, 0.18525750935077667, 0.14800345897674561" shapeFieldName="Name" />
+          </moveableDecoratorHostShapes>
+        </outputPinShape>
+        <inputPinShape Id="ff0b8be8-d84d-42fb-af31-92fd046fa0c5" absoluteBounds="2.75, 1.78125, 0.15, 0.15">
+          <inputPinMoniker Id="583e9726-9956-45d8-9b1d-347ab47fa213" LastKnownName="initialDirectory" />
+          <relativeChildShapes />
+          <moveableDecoratorHostShapes>
+            <moveableDecoratorHostShape manuallyPlaced="true" absoluteBounds="2.8125, 1.59375, 0.76050704717636108, 0.14800345897674561" shapeFieldName="Name" />
+          </moveableDecoratorHostShapes>
+        </inputPinShape>
+        <inputPinShape Id="098cb510-5a20-4681-a451-49efc5b3901f" absoluteBounds="1.09375, 2.5, 0.15, 0.15">
+          <inputPinMoniker Id="7c88dbe5-3615-44c2-9e9a-0a638d763c61" LastKnownName="!is.na" />
+          <relativeChildShapes />
+        </inputPinShape>
+        <outputPinShape Id="aaae6c71-4174-441a-a13e-882a1b767651" absoluteBounds="2.15625, 2.5, 0.15, 0.15">
+          <outputPinMoniker Id="2eb91535-659d-4317-925e-5ef4e93336a5" LastKnownName="return fuction value" />
+          <relativeChildShapes />
+          <moveableDecoratorHostShapes>
+            <moveableDecoratorHostShape manuallyPlaced="true" absoluteBounds="2.28125, 2.7500000000000004, 1.0278139114379883, 0.14800345897674561" shapeFieldName="Name" />
+          </moveableDecoratorHostShapes>
+        </outputPinShape>
+        <inputPinShape Id="ab6a2cb5-f906-413a-9a1a-5605c04ab2e8" absoluteBounds="0.6, 2.03125, 0.15, 0.15">
+          <inputPinMoniker Id="e73f2346-8bc4-4a62-b75d-66d42b7d56ab" LastKnownName="wd" />
+          <relativeChildShapes />
+          <moveableDecoratorHostShapes>
+            <moveableDecoratorHostShape manuallyPlaced="true" absoluteBounds="0.5, 2.25, 0.18525750935077667, 0.14800345897674561" shapeFieldName="Name" />
+          </moveableDecoratorHostShapes>
+        </inputPinShape>
+        <outputPinShape Id="4af7cca6-6898-4d88-b074-f9f4a43380e0" absoluteBounds="2.75, 2, 0.15, 0.15">
+          <outputPinMoniker Id="24244b18-c5c7-40aa-a3f7-bb57aecfce55" LastKnownName="initialDir" />
+          <relativeChildShapes />
+          <moveableDecoratorHostShapes>
+            <moveableDecoratorHostShape manuallyPlaced="true" absoluteBounds="2.84375, 2.2187500000000004, 0.44882085919380188, 0.14800345897674561" shapeFieldName="Name" />
+          </moveableDecoratorHostShapes>
+        </outputPinShape>
+      </relativeChildShapes>
+    </callBehaviorActionShape>
+    <objectNodeShape Id="749763a5-2bf1-42b6-992d-3ba3d6e99196" absoluteBounds="0.75, 4.25, 2.625, 0.25" customColor="White">
+      <objectNodeMoniker Id="570d2230-a28e-48ee-a269-ab7bbce6a60b" LastKnownName="create vectorForCsvFiles in direictory" />
+    </objectNodeShape>
+    <objectNodeShape Id="9541a05d-5764-487c-95bc-7d8ca7509f3a" absoluteBounds="0.75, 5.5, 2.125, 0.25" customColor="White">
+      <objectNodeMoniker Id="4dd966c4-507a-4d17-9f0d-ab87b20ed2bb" LastKnownName="create vectorForCsvFilesInId" />
+    </objectNodeShape>
+    <objectNodeShape Id="4e91080a-e83f-44dd-803b-43aa5962971d" absoluteBounds="0.75, 11.75, 3.375, 0.375" customColor="White">
+      <objectNodeMoniker Id="102c3504-ec1d-475d-9b5a-3f8186b6c244" LastKnownName="returns the mean of the pollutant across all of the monitors" />
+    </objectNodeShape>
+    <objectNodeShape Id="de09b40f-8cf8-490a-b2c2-bd98e19cf53a" absoluteBounds="0.75, 10.375, 2.625, 0.375" customColor="White">
+      <objectNodeMoniker Id="d89dabb5-762c-44b8-9890-d0e46f671539" LastKnownName="create weighted Mean" />
+    </objectNodeShape>
+    <objectFlowConnector edgePoints="[(0.6 : 1.85625); (0.50625 : 1.85625); (0.50625 : 1.53125); (3.75253904412639 : 1.53125); (3.75253904412639 : 1.85625); (2.9 : 1.85625)]" manuallyRouted="true" fixedFrom="Caller" fixedTo="Caller" customColor="Black">
+      <objectFlowMoniker Id="6652043f-95f1-468a-a046-ab707d7d8c11" />
+      <relativeChildShapes />
+      <moveableDecoratorHostShapes>
+        <moveableDecoratorHostShape manuallyPlaced="true" absoluteBounds="0.9560818076133728, 1.3750000000000007, 1.4422018527984619, 0.14800345897674561" shapeFieldName="Guard" />
+      </moveableDecoratorHostShapes>
+      <nodes>
+        <outputPinShapeMoniker Id="c02c87d2-1fe7-4207-9834-63f9ba917f4f" />
+        <inputPinShapeMoniker Id="ff0b8be8-d84d-42fb-af31-92fd046fa0c5" />
+      </nodes>
+    </objectFlowConnector>
+    <callBehaviorActionShape Id="c61b8c53-023c-42f5-885e-455952d3d07e" absoluteBounds="0.75, 3.375, 2, 0.5" customColor="161, 199, 231">
+      <callBehaviorActionMoniker Id="6e11dd5c-6cc4-4e13-9c5b-036806985618" LastKnownName="Set Working Dir to directory" />
+      <relativeChildShapes>
+        <inputPinShape Id="f5f4f803-7a46-46f9-bdeb-24ac9e0d04d0" absoluteBounds="2.75, 3.53125, 0.15, 0.15">
+          <inputPinMoniker Id="8fd52b4a-40d6-49da-9234-c8c96f628911" LastKnownName="wd" />
+          <relativeChildShapes />
+        </inputPinShape>
+      </relativeChildShapes>
+    </callBehaviorActionShape>
+    <objectFlowConnector edgePoints="[(5.625 : 3.60625); (2.9 : 3.60625)]" fixedFrom="Algorithm" fixedTo="Caller" customColor="Black">
+      <objectFlowMoniker Id="59fce535-00f0-44de-9e63-38e5ac3d97eb" />
+      <relativeChildShapes />
+      <moveableDecoratorHostShapes>
+        <moveableDecoratorHostShape manuallyPlaced="true" absoluteBounds="4, 3.4375000000000027, 0.95251005887985229, 0.14800345897674561" shapeFieldName="Guard" />
+      </moveableDecoratorHostShapes>
+      <nodes>
+        <activityParameterNodeShapeMoniker Id="cdf02518-e4a4-4981-8c61-5dcc026eabf9" />
+        <inputPinShapeMoniker Id="f5f4f803-7a46-46f9-bdeb-24ac9e0d04d0" />
+      </nodes>
+    </objectFlowConnector>
+    <controlFlowConnector edgePoints="[(1.7 : 2.5); (1.7 : 3.375)]" fixedFrom="Algorithm" fixedTo="Algorithm" customColor="Black">
+      <controlFlowMoniker Id="c941bd53-c4b1-4cf9-a4fd-eb7ebefb3cc2" />
+      <relativeChildShapes />
+      <nodes>
+        <callBehaviorActionShapeMoniker Id="ef9b376a-b283-497f-a437-d25160b2419f" />
+        <callBehaviorActionShapeMoniker Id="c61b8c53-023c-42f5-885e-455952d3d07e" />
+      </nodes>
+    </controlFlowConnector>
+    <objectFlowConnector edgePoints="[(1.8125 : 4.5); (1.8125 : 5.5)]" fixedFrom="Algorithm" fixedTo="Algorithm" customColor="Black">
+      <objectFlowMoniker Id="42bcb109-ad31-48e6-bc99-93b0594dd3bf" />
+      <relativeChildShapes />
+      <moveableDecoratorHostShapes>
+        <moveableDecoratorHostShape manuallySized="true" manuallyPlaced="true" absoluteBounds="1.6875, 4.9375, 5.337980906168621, 0.14800345897674561" shapeFieldName="Guard" />
+      </moveableDecoratorHostShapes>
+      <nodes>
+        <objectNodeShapeMoniker Id="749763a5-2bf1-42b6-992d-3ba3d6e99196" />
+        <objectNodeShapeMoniker Id="9541a05d-5764-487c-95bc-7d8ca7509f3a" />
+      </nodes>
+    </objectFlowConnector>
+    <objectFlowConnector edgePoints="[(1.75 : 3.875); (1.75 : 4.25)]" fixedFrom="Algorithm" fixedTo="Algorithm" customColor="Black">
+      <objectFlowMoniker Id="32130ff6-d2bf-4f65-83b5-332cb18ff076" />
+      <relativeChildShapes />
+      <nodes>
+        <callBehaviorActionShapeMoniker Id="c61b8c53-023c-42f5-885e-455952d3d07e" />
+        <objectNodeShapeMoniker Id="749763a5-2bf1-42b6-992d-3ba3d6e99196" />
+      </nodes>
+    </objectFlowConnector>
+    <objectFlowConnector edgePoints="[(5.625 : 5.625); (2.875 : 5.625)]" fixedFrom="Algorithm" fixedTo="Algorithm" customColor="Black">
+      <objectFlowMoniker Id="0790e865-a1ec-4736-ab4e-7d018feaacbd" />
+      <relativeChildShapes />
+      <moveableDecoratorHostShapes>
+        <moveableDecoratorHostShape manuallySized="true" manuallyPlaced="true" absoluteBounds="3, 5.4375000000000009, 2.6185609122117359, 0.14800345897674561" shapeFieldName="Guard" />
+      </moveableDecoratorHostShapes>
+      <nodes>
+        <activityParameterNodeShapeMoniker Id="13abde94-484e-4afb-ab79-877b0978a8bb" />
+        <objectNodeShapeMoniker Id="9541a05d-5764-487c-95bc-7d8ca7509f3a" />
+      </nodes>
+    </objectFlowConnector>
+    <objectNodeShape Id="b1a39938-3d11-4624-afb0-3415937986f0" absoluteBounds="0.75, 6.5, 2.125, 0.25" customColor="White">
+      <objectNodeMoniker Id="3f8d5789-545d-425a-9c33-3d4a200bbb88" LastKnownName="create listOfDataFramesForCsvFilesInId" />
+    </objectNodeShape>
+    <objectFlowConnector edgePoints="[(1.8125 : 5.75); (1.8125 : 6.5)]" fixedFrom="Algorithm" fixedTo="Algorithm" customColor="Black">
+      <objectFlowMoniker Id="0ce2207c-9e2b-4b10-aaf7-c31b0e936a9a" />
+      <relativeChildShapes />
+      <moveableDecoratorHostShapes>
+        <moveableDecoratorHostShape manuallyPlaced="true" absoluteBounds="1.8715548515319824, 6, 4.8673319816589355, 0.14800345897674561" shapeFieldName="Guard" />
+      </moveableDecoratorHostShapes>
+      <nodes>
+        <objectNodeShapeMoniker Id="9541a05d-5764-487c-95bc-7d8ca7509f3a" />
+        <objectNodeShapeMoniker Id="b1a39938-3d11-4624-afb0-3415937986f0" />
+      </nodes>
+    </objectFlowConnector>
+    <objectNodeShape Id="e9233c1c-1fbe-4a6f-a14a-057a44ea515a" absoluteBounds="0.75, 7.25, 2.75, 0.25" customColor="White">
+      <objectNodeMoniker Id="1a3eadd2-1159-4264-9c53-f66ae3c80256" LastKnownName="create  particulateMatterDataFramesForCsvFilesInId" />
+    </objectNodeShape>
+    <objectFlowConnector edgePoints="[(5.625 : 7.375); (3.5 : 7.375)]" fixedFrom="Algorithm" fixedTo="Algorithm" customColor="Black">
+      <objectFlowMoniker Id="afc544ae-48a8-43dd-bbde-4ec40ef8e78e" />
+      <relativeChildShapes />
+      <moveableDecoratorHostShapes>
+        <moveableDecoratorHostShape manuallySized="true" manuallyPlaced="true" absoluteBounds="3.6875, 6.875, 8.1693802857220259, 0.14800345897674561" shapeFieldName="Guard" />
+      </moveableDecoratorHostShapes>
+      <nodes>
+        <activityParameterNodeShapeMoniker Id="789ebb21-297b-4b70-a852-51ce46ae84ac" />
+        <objectNodeShapeMoniker Id="e9233c1c-1fbe-4a6f-a14a-057a44ea515a" />
+      </nodes>
+    </objectFlowConnector>
+    <objectFlowConnector edgePoints="[(1.8125 : 6.75); (1.8125 : 7.25)]" fixedFrom="Algorithm" fixedTo="Algorithm" customColor="Black">
+      <objectFlowMoniker Id="ca8784a4-09dd-4459-b599-50b5813feaad" />
+      <relativeChildShapes />
+      <nodes>
+        <objectNodeShapeMoniker Id="b1a39938-3d11-4624-afb0-3415937986f0" />
+        <objectNodeShapeMoniker Id="e9233c1c-1fbe-4a6f-a14a-057a44ea515a" />
+      </nodes>
+    </objectFlowConnector>
+    <objectFlowConnector edgePoints="[(1.10716052968219 : 7.5); (1.14184207479778 : 10.375)]" manuallyRouted="true" fixedFrom="Caller" fixedTo="Caller" customColor="Black">
+      <objectFlowMoniker Id="d3e402e9-daaa-4330-8404-c4193951aa9b" />
+      <relativeChildShapes />
+      <moveableDecoratorHostShapes>
+        <moveableDecoratorHostShape manuallySized="true" manuallyPlaced="true" absoluteBounds="0.8125, 7.625, 7.5002267007138492, 0.14800345897674561" shapeFieldName="Guard" />
+      </moveableDecoratorHostShapes>
+      <nodes>
+        <objectNodeShapeMoniker Id="e9233c1c-1fbe-4a6f-a14a-057a44ea515a" />
+        <objectNodeShapeMoniker Id="de09b40f-8cf8-490a-b2c2-bd98e19cf53a" />
+      </nodes>
+    </objectFlowConnector>
+    <objectFlowConnector edgePoints="[(2.0625 : 10.75); (2.0625 : 11.75)]" manuallyRouted="true" fixedFrom="Algorithm" fixedTo="Algorithm" customColor="Black">
+      <objectFlowMoniker Id="852e3f24-3167-4c60-81bd-7dc8bb3848a4" />
+      <relativeChildShapes />
+      <moveableDecoratorHostShapes>
+        <moveableDecoratorHostShape manuallySized="true" manuallyPlaced="true" absoluteBounds="2.125, 11.125, 9.2025578747939036, 0.14800345897674561" shapeFieldName="Guard" />
+      </moveableDecoratorHostShapes>
+      <nodes>
+        <objectNodeShapeMoniker Id="de09b40f-8cf8-490a-b2c2-bd98e19cf53a" />
+        <objectNodeShapeMoniker Id="4e91080a-e83f-44dd-803b-43aa5962971d" />
+      </nodes>
+    </objectFlowConnector>
+    <objectFlowConnector edgePoints="[(0.75 : 11.9375); (0.5 : 11.9375); (0.5 : 3.025); (1.16875 : 3.025); (1.16875 : 2.65)]" manuallyRouted="true" fixedFrom="Algorithm" fixedTo="Caller" customColor="Black">
+      <objectFlowMoniker Id="78ce11c7-59d9-43d7-b7ad-07ae882d56f9" />
+      <relativeChildShapes />
+      <nodes>
+        <objectNodeShapeMoniker Id="4e91080a-e83f-44dd-803b-43aa5962971d" />
+        <inputPinShapeMoniker Id="098cb510-5a20-4681-a451-49efc5b3901f" />
+      </nodes>
+    </objectFlowConnector>
+    <sendSignalActionShape Id="4a9cc139-44f9-44ba-b879-e73ba5feea44" absoluteBounds="5.625, 2.875, 1.125, 0.375" customColor="185, 212, 238">
+      <sendSignalActionMoniker Id="f3034daf-f121-42c5-bf50-d594e9da45d4" LastKnownName="Mean" />
+      <relativeChildShapes />
+    </sendSignalActionShape>
+    <objectFlowConnector edgePoints="[(2.23125 : 2.65); (2.23125 : 3.0625); (5.625 : 3.0625)]" manuallyRouted="true" fixedFrom="Caller" fixedTo="Algorithm" customColor="Black">
+      <objectFlowMoniker Id="b73ea2ef-4d5b-44d1-9ea8-f10a70a8974d" />
+      <relativeChildShapes />
+      <nodes>
+        <outputPinShapeMoniker Id="aaae6c71-4174-441a-a13e-882a1b767651" />
+        <sendSignalActionShapeMoniker Id="4a9cc139-44f9-44ba-b879-e73ba5feea44" />
+      </nodes>
+    </objectFlowConnector>
+    <objectFlowConnector edgePoints="[(2.9 : 2.075); (4.14774162946542 : 2.075); (4.14774162946542 : 1.2832031302496); (0.393273919757759 : 1.2832031302496); (0.393273919757759 : 2.10625); (0.6 : 2.10625)]" manuallyRouted="true" fixedFrom="Caller" fixedTo="Caller" customColor="Black">
+      <objectFlowMoniker Id="7bbf5435-ee43-4508-9b27-6446d3224cc4" />
+      <relativeChildShapes />
+      <moveableDecoratorHostShapes>
+        <moveableDecoratorHostShape manuallyPlaced="true" absoluteBounds="1.0625, 1.125, 1.2336515188217163, 0.14800345897674561" shapeFieldName="Guard" />
+      </moveableDecoratorHostShapes>
+      <nodes>
+        <outputPinShapeMoniker Id="4af7cca6-6898-4d88-b074-f9f4a43380e0" />
+        <inputPinShapeMoniker Id="ab6a2cb5-f906-413a-9a1a-5605c04ab2e8" />
+      </nodes>
+    </objectFlowConnector>
+    <objectNodeShape Id="6e239f61-5727-41e9-b240-0f08376cb2a1" absoluteBounds="1.375, 8.5, 3.125, 0.25" customColor="White">
+      <objectNodeMoniker Id="c395fade-8b01-4589-adf1-e9f2fff606de" LastKnownName="create  goodParticulateMatterDataFramesForCsvFilesInId" />
+    </objectNodeShape>
+    <objectFlowConnector edgePoints="[(2.25856841323598 : 7.5); (2.25856841323598 : 8.5)]" fixedFrom="Algorithm" fixedTo="Caller" customColor="Black">
+      <objectFlowMoniker Id="1d0a1c6e-2745-411e-9722-776eb1a5ee4a" />
+      <relativeChildShapes />
+      <moveableDecoratorHostShapes>
+        <moveableDecoratorHostShape manuallyPlaced="true" absoluteBounds="2.375, 8.0625, 7.7637076377868652, 0.14800345897674561" shapeFieldName="Guard" />
+      </moveableDecoratorHostShapes>
+      <nodes>
+        <objectNodeShapeMoniker Id="e9233c1c-1fbe-4a6f-a14a-057a44ea515a" />
+        <objectNodeShapeMoniker Id="6e239f61-5727-41e9-b240-0f08376cb2a1" />
+      </nodes>
+    </objectFlowConnector>
+    <objectNodeShape Id="43c763f0-6384-4788-8226-3ee724c257a0" absoluteBounds="1.75, 9.5, 3.125, 0.25" customColor="White">
+      <objectNodeMoniker Id="57d8c0de-ed33-4d04-bb79-a3174d25b480" LastKnownName="create  weightsParticulateMatterDataFramesForCsvFilesInId" />
+    </objectNodeShape>
+    <objectFlowConnector edgePoints="[(3.92405299411098 : 8.75); (3.92405299411098 : 9.5)]" fixedFrom="Caller" fixedTo="Algorithm" customColor="Black">
+      <objectFlowMoniker Id="c11aaa37-498e-4410-b8dd-a1a0c3263754" />
+      <relativeChildShapes />
+      <moveableDecoratorHostShapes>
+        <moveableDecoratorHostShape manuallyPlaced="true" absoluteBounds="4, 9, 6.0865702629089355, 0.14800345897674561" shapeFieldName="Guard" />
+      </moveableDecoratorHostShapes>
+      <nodes>
+        <objectNodeShapeMoniker Id="6e239f61-5727-41e9-b240-0f08376cb2a1" />
+        <objectNodeShapeMoniker Id="43c763f0-6384-4788-8226-3ee724c257a0" />
+      </nodes>
+    </objectFlowConnector>
+    <objectFlowConnector edgePoints="[(2.5625 : 9.75); (2.5625 : 10.375)]" fixedFrom="Algorithm" fixedTo="Algorithm" customColor="Black">
+      <objectFlowMoniker Id="e5bd5025-46af-4904-a127-1c30e01f0549" />
+      <relativeChildShapes />
+      <nodes>
+        <objectNodeShapeMoniker Id="43c763f0-6384-4788-8226-3ee724c257a0" />
+        <objectNodeShapeMoniker Id="de09b40f-8cf8-490a-b2c2-bd98e19cf53a" />
+      </nodes>
+    </objectFlowConnector>
+  </nestedChildShapes>
+</activityDiagram>
