@@ -29,6 +29,13 @@
       <SubType>Content</SubType>
       <DependentUpon>complete.R.activitydiagram</DependentUpon>
     </Content>
+    <Content Include="corr.R.activitydiagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="corr.R.activitydiagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>corr.R.activitydiagram</DependentUpon>
+    </Content>
     <Content Include="pollutantmean.R.activitydiagram">
       <SubType>Content</SubType>
     </Content>
