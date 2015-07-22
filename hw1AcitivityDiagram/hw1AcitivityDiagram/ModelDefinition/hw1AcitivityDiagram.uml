@@ -62,81 +62,122 @@
     </comment>
     <comment
       Id="57dfcaac-9ed9-4390-bb3c-da020c69fda4">
-      <body>numGoodParticulateMatterCompleteCaseListsForCsvFilesInId &lt;- 
-    sapply(vectorForCsvFilesInId
-           ,function(file) {
-               pollutantsDataFrameForCsvFileInId &lt;-
-                 listOfDataFramesForCsvFilesInId[[file]][pollutant]
-               
-               completeCases &lt;- 
-                 complete.cases(pollutantsDataFrameForCsvFileInId[pollutant])
-               
-               particulateMatterCompleteCaseListsForCsvFilesInId &lt;-
-                 pollutantsDataFrameForCsvFileInId[pollutant][completeCases,]
-               
-               nrow(particulateMatterCompleteCaseListsForCsvFilesInId[pollutant])
-
+      <body>    metThresholdlistOfCsvFilesInId &lt;-
+      sapply(metThresholdParticulateMatterCompleteCaseDataFramesForCsvFilesInId
+             ,function(fileId) {
+                 paste(paste(rep_len("0",3-nchar(fileId)),sep = "",collapse = "")
+                       ,as.character(fileId),".csv",sep = "")
              },simplify = FALSE)</body>
       <annotatedElements>
         <objectNodeMoniker
           Id="8308ee8b-6445-4685-8c08-dfd7e4372077"
-          LastKnownName="create  numGoodParticulateMatterCompleteCaseListsForCsvFilesInId "
+          LastKnownName="metThresholdlistOfCsvFilesInId "
           LastKnownLocation="hw1AcitivityDiagram.uml" />
       </annotatedElements>
     </comment>
     <comment
-      Id="0dd2df21-e052-4a9f-9791-719f562d2327">
-      <body>colnames(numGoodParticulateMatterCompleteCaseDataFramesForCsvFilesInId) &lt;- 
-    c("id", "nobs")
-  
-  nocsv&lt;-sub(".csv", "", numGoodParticulateMatterCompleteCaseDataFramesForCsvFilesInId["id"][[1]])
-  
-  noX&lt;-as.numeric(sub("X", "", nocsv))
-  
-  numGoodParticulateMatterCompleteCaseDataFramesForCsvFilesInId["id"]&lt;-noX</body>
+      Id="74a40fa7-5f09-4b4b-a4c5-cf351aac9331">
+      <body>Model</body>
       <annotatedElements>
         <objectNodeMoniker
-          Id="b3496095-be1e-4767-98ca-929351979773"
-          LastKnownName="Format"
+          Id="8308ee8b-6445-4685-8c08-dfd7e4372077"
+          LastKnownName="metThresholdlistOfCsvFilesInId "
           LastKnownLocation="hw1AcitivityDiagram.uml" />
       </annotatedElements>
     </comment>
     <comment
-      Id="dd8603ad-b5f7-4ed2-8607-e6224c7a32e2">
-      <body>100% thresold implies that the the test is difficult.  So the CompleCase senario applies there.  Thus low thrshold implies a low success rate for the good/bad ratio</body>
+      Id="4b3b2e1c-b430-4c91-abb1-308d9316473a">
+      <body>View</body>
+      <annotatedElements>
+        <objectNodeMoniker
+          Id="c888284a-5268-4fa5-b7ac-8b282749a0f4"
+          LastKnownName="unlist(correlationMetThresholdListOfDataFramesForCsvFilesInId)"
+          LastKnownLocation="hw1AcitivityDiagram.uml" />
+      </annotatedElements>
     </comment>
     <comment
-      Id="2db4f46b-bb7d-4a8c-99ce-f66dbf25ee16">
-      <body>correlationParticulateMatterCompleteCaseDataFramesForCsvFilesInId&lt;- 
-    sapply(vectorForCsvFilesInId
-           ,function(file) {
-               pollutantsDataFrameForCsvFileInId &lt;-
-                 listOfDataFramesForCsvFilesInId[[file]][pollutant]
-               
-               completeCases &lt;- 
-                 complete.cases(pollutantsDataFrameForCsvFileInId[pollutant])
-               
-               particulateMatterCompleteCaseListsForCsvFilesInId &lt;-
-                 pollutantsDataFrameForCsvFileInId[pollutant][completeCases,]
-               
-               nrow(particulateMatterCompleteCaseListsForCsvFilesInId[pollutant])
+      Id="0c006de0-67ff-455c-a045-4ab93d227667">
+      <body>id &lt;- 1:332
 
-             },simplify = FALSE)</body>
+ source("complete.R")
+</body>
+      <annotatedElements>
+        <callBehaviorActionMoniker
+          Id="7b7a4ceb-f59e-4fdd-9d1b-5ed58d0e1072"
+          LastKnownName="complete.R"
+          LastKnownLocation="hw1AcitivityDiagram.uml" />
+      </annotatedElements>
+    </comment>
+    <comment
+      Id="abba92d6-e42e-4af2-9b97-1425db8483c6">
+      <body>  numParticulateMatterCompleteCaseDataFramesForCsvFilesInId &lt;-
+    complete(directory,id)</body>
+      <annotatedElements>
+        <objectNodeMoniker
+          Id="59df08fe-e101-499d-bc48-f06e5b082086"
+          LastKnownName="numParticulateMatterCompleteCaseDataFramesForCsvFilesInId "
+          LastKnownLocation="hw1AcitivityDiagram.uml" />
+      </annotatedElements>
+    </comment>
+    <comment
+      Id="2abf9706-781a-4233-a78c-bafe1002da3f">
+      <body>  meetThresholdParticulateMatterCompleteCaseDataFramesForCsvFilesInId &lt;-
+    numParticulateMatterCompleteCaseDataFramesForCsvFilesInId["nobs"] &gt; threshold</body>
+      <annotatedElements>
+        <objectNodeMoniker
+          Id="9cba6f22-6f79-4413-8b57-8a8ebc7dca95"
+          LastKnownName="meetThresholdParticulateMatterCompleteCaseDataFramesForCsvFilesInId "
+          LastKnownLocation="hw1AcitivityDiagram.uml" />
+      </annotatedElements>
+    </comment>
+    <comment
+      Id="7c19879c-dc6a-43d0-bd5a-206e09a407f5">
+      <body>    metThresholdParticulateMatterCompleteCaseDataFramesForCsvFilesInId &lt;-
+      numParticulateMatterCompleteCaseDataFramesForCsvFilesInId["id"][
+        meetThresholdParticulateMatterCompleteCaseDataFramesForCsvFilesInId]</body>
+      <annotatedElements>
+        <objectNodeMoniker
+          Id="4643da9e-9be0-48cb-b80f-599b99279fbb"
+          LastKnownName="metThresholdParticulateMatterCompleteCaseDataFramesForCsvFilesInId "
+          LastKnownLocation="hw1AcitivityDiagram.uml" />
+      </annotatedElements>
+    </comment>
+    <comment
+      Id="8c24438e-231e-46d4-868e-778b27108cfb">
+      <body> metThresholdlistOfDataFramesForCsvFilesInId &lt;-
+      sapply(metThresholdlistOfCsvFilesInId, read.csv
+             , simplify = FALSE)</body>
+      <annotatedElements>
+        <objectNodeMoniker
+          Id="5649a6bb-a5ef-4670-accc-aeec4545fbbd"
+          LastKnownName="metThresholdlistOfDataFramesForCsvFilesInId "
+          LastKnownLocation="hw1AcitivityDiagram.uml" />
+      </annotatedElements>
+    </comment>
+    <comment
+      Id="4e007c50-167c-41af-9847-bd87f142b2df">
+      <body>    metThresholdListOfDataFramesForCsvFilesInId &lt;-
+      sapply(metThresholdListOfCsvFilesInId, read.csv
+             , simplify = FALSE)</body>
       <annotatedElements>
         <objectNodeMoniker
           Id="fb57af20-cc91-4cfd-9884-5c1ba5065bde"
-          LastKnownName="create correlationParticulateMatterCompleteCaseDataFramesForCsvFilesInId"
+          LastKnownName="metThresholdListOfDataFramesForCsvFilesInId "
           LastKnownLocation="hw1AcitivityDiagram.uml" />
       </annotatedElements>
     </comment>
     <comment
-      Id="9bff8f17-9e92-44fa-83f8-eaee8c59820c">
-      <body>vectorForCsvFilesInId&lt;-
-                 vectorForCsvFilesInId[1][numGoodParticulateMatterCompleteCaseMetThresholdDataFramesForCsvFilesInId,]</body>
+      Id="663bae13-4f69-45b2-ba7b-bc1722617c7c">
+      <body>correlationMetThresholdListOfDataFramesForCsvFilesInId &lt;-
+      sapply(metThresholdListOfDataFramesForCsvFilesInId
+           ,function(df) {
+             cor(x=df[pollutant[1]],y=df[pollutant[2]]
+                 ,use = "complete.obs",method = "pearson")
+             },simplify = FALSE)</body>
       <annotatedElements>
         <objectNodeMoniker
-          Id="4a60ecc6-d4e5-4407-8b46-d38cf78dedf3"
-          LastKnownName="create numGoodParticulateMatterCompleteCaseMetThresholdDataFramesForCsvFilesInId"
+          Id="5639b17a-0257-45d2-b1d4-de0eaf71fa27"
+          LastKnownName="metThresholdListOfDataFramesForCsvFilesInId 1"
           LastKnownLocation="hw1AcitivityDiagram.uml" />
       </annotatedElements>
     </comment>
@@ -1633,13 +1674,22 @@
             isControlType="false">
             <objectFlowTargets>
               <objectFlow
-                Id="46a5f793-63af-408e-81ff-0326064971d6"
-                guard="setwd(directory)"
+                Id="6cf83cf8-c4de-48a2-9d9b-3c3eedfc7adc"
                 isLeaf="false"
                 isMulticast="false"
                 isMultireceive="false">
                 <inputPinMoniker
-                  Id="7437da6d-a3b0-4cda-a08f-b6c6fe7877db"
+                  Id="003f1503-dc55-40b7-9bc3-4fee9f14190f"
+                  LastKnownName="Directory"
+                  LastKnownLocation="hw1AcitivityDiagram.uml" />
+              </objectFlow>
+              <objectFlow
+                Id="bc1e7219-7e00-47b7-bcb0-c0ec140a8301"
+                isLeaf="false"
+                isMulticast="false"
+                isMultireceive="false">
+                <inputPinMoniker
+                  Id="71f3348d-56a3-4798-b04f-19cd101f497e"
                   LastKnownName="wd"
                   LastKnownLocation="hw1AcitivityDiagram.uml" />
               </objectFlow>
@@ -1647,31 +1697,6 @@
             <upperBound>
               <literalInteger
                 Id="ff7f8ea4-e68d-4f47-8cee-7425d42f2638"
-                name="2147483647"
-                value="2147483647" />
-            </upperBound>
-          </activityParameterNode>
-          <activityParameterNode
-            Id="ed477642-9e5b-4f58-8378-aef383acc16e"
-            name="pollutant&lt;-c(&quot;nitrate&quot;,&quot;sulfate&quot;)"
-            isLeaf="false"
-            ordering="Unordered"
-            isControlType="false">
-            <objectFlowTargets>
-              <objectFlow
-                Id="08808d44-b35c-46f1-a911-9ff1afd77000"
-                isLeaf="false"
-                isMulticast="false"
-                isMultireceive="false">
-                <objectNodeMoniker
-                  Id="8308ee8b-6445-4685-8c08-dfd7e4372077"
-                  LastKnownName="create  numGoodParticulateMatterCompleteCaseListsForCsvFilesInId "
-                  LastKnownLocation="hw1AcitivityDiagram.uml" />
-              </objectFlow>
-            </objectFlowTargets>
-            <upperBound>
-              <literalInteger
-                Id="f6afeca8-c3c8-4f3b-ae30-8d1c7bb5296e"
                 name="2147483647"
                 value="2147483647" />
             </upperBound>
@@ -1685,14 +1710,13 @@
             <description>a vector monitor ID numbers</description>
             <objectFlowTargets>
               <objectFlow
-                Id="7762380b-f9f7-4242-bfec-f22b87d7ab9e"
-                guard="vectorForCsvFilesInId &lt;- vectorForCsvFiles [id]"
+                Id="3f649164-6626-4776-a041-add18d72319b"
                 isLeaf="false"
                 isMulticast="false"
                 isMultireceive="false">
-                <objectNodeMoniker
-                  Id="9cba6f22-6f79-4413-8b57-8a8ebc7dca95"
-                  LastKnownName="create vectorForCsvFilesInId"
+                <inputPinMoniker
+                  Id="9d10e640-76c4-492a-a884-928119e8a983"
+                  LastKnownName="id"
                   LastKnownLocation="hw1AcitivityDiagram.uml" />
               </objectFlow>
             </objectFlowTargets>
@@ -1705,48 +1729,9 @@
           </activityParameterNode>
           <callBehaviorAction
             Id="7b7a4ceb-f59e-4fdd-9d1b-5ed58d0e1072"
-            name="Toggle  Working Directory"
+            name="complete.R"
             isLeaf="false">
-            <flowNodeTargets>
-              <controlFlow
-                Id="cb866987-8abd-46aa-bdb6-d3c3a1940f42"
-                isLeaf="false">
-                <callBehaviorActionMoniker
-                  Id="cf50d582-51e0-41c0-9d9b-6474a056fc89"
-                  LastKnownName="Set Working Dir to directory"
-                  LastKnownLocation="hw1AcitivityDiagram.uml" />
-              </controlFlow>
-            </flowNodeTargets>
             <pins>
-              <callActionHasResults>
-                <outputPin
-                  Id="34aca1c1-4eb2-4564-9677-9e1cd52bce50"
-                  name="wd"
-                  isLeaf="false"
-                  ordering="Unordered"
-                  isControlType="false"
-                  isControl="false">
-                  <objectFlowTargets>
-                    <objectFlow
-                      Id="04336861-d64f-4cdb-8dde-07b679313f1e"
-                      guard="initialDirectory &lt;- getwd()"
-                      isLeaf="false"
-                      isMulticast="false"
-                      isMultireceive="false">
-                      <inputPinMoniker
-                        Id="003f1503-dc55-40b7-9bc3-4fee9f14190f"
-                        LastKnownName="initialDirectory"
-                        LastKnownLocation="hw1AcitivityDiagram.uml" />
-                    </objectFlow>
-                  </objectFlowTargets>
-                  <upperBound>
-                    <literalInteger
-                      Id="868e9af6-3c5b-4a5e-a88c-709c4f2681db"
-                      name="2147483647"
-                      value="2147483647" />
-                  </upperBound>
-                </outputPin>
-              </callActionHasResults>
               <callActionHasResults>
                 <outputPin
                   Id="3fdeabbd-c641-40f8-8bef-5ba2fd783239"
@@ -1757,13 +1742,13 @@
                   isControl="false">
                   <objectFlowTargets>
                     <objectFlow
-                      Id="9ae2030d-535d-4f4b-b1eb-cac57a7b1b39"
+                      Id="2df9fb32-b3e1-48fc-ab84-93e4f47ce790"
                       isLeaf="false"
                       isMulticast="false"
                       isMultireceive="false">
-                      <sendSignalActionMoniker
-                        Id="9ba61551-e39c-4f67-b1d1-37c63866745b"
-                        LastKnownName="correlation"
+                      <objectNodeMoniker
+                        Id="59df08fe-e101-499d-bc48-f06e5b082086"
+                        LastKnownName="numParticulateMatterCompleteCaseDataFramesForCsvFilesInId "
                         LastKnownLocation="hw1AcitivityDiagram.uml" />
                     </objectFlow>
                   </objectFlowTargets>
@@ -1775,39 +1760,10 @@
                   </upperBound>
                 </outputPin>
               </callActionHasResults>
-              <callActionHasResults>
-                <outputPin
-                  Id="31c5f503-5ce6-4789-bfbe-30a40504c2f5"
-                  name="initialDir"
-                  isLeaf="false"
-                  ordering="Unordered"
-                  isControlType="false"
-                  isControl="false">
-                  <objectFlowTargets>
-                    <objectFlow
-                      Id="1a39b588-6905-459c-b423-5ed3f1318a75"
-                      guard="setwd(initialDirectory)"
-                      isLeaf="false"
-                      isMulticast="false"
-                      isMultireceive="false">
-                      <inputPinMoniker
-                        Id="9d10e640-76c4-492a-a884-928119e8a983"
-                        LastKnownName="wd"
-                        LastKnownLocation="hw1AcitivityDiagram.uml" />
-                    </objectFlow>
-                  </objectFlowTargets>
-                  <upperBound>
-                    <literalInteger
-                      Id="651c4796-f968-4e40-b390-67b046bad81a"
-                      name="2147483647"
-                      value="2147483647" />
-                  </upperBound>
-                </outputPin>
-              </callActionHasResults>
               <invocationActionHasArguments>
                 <inputPin
                   Id="003f1503-dc55-40b7-9bc3-4fee9f14190f"
-                  name="initialDirectory"
+                  name="Directory"
                   isLeaf="false"
                   ordering="Unordered"
                   isControlType="false"
@@ -1822,24 +1778,8 @@
               </invocationActionHasArguments>
               <invocationActionHasArguments>
                 <inputPin
-                  Id="affbb2cf-c74f-46ba-91f5-75db675ce893"
-                  name="!is.na"
-                  isLeaf="false"
-                  ordering="Unordered"
-                  isControlType="false"
-                  isControl="false">
-                  <upperBound>
-                    <literalInteger
-                      Id="1f70aca0-a087-44b0-9a21-e7c76c0c3d91"
-                      name="2147483647"
-                      value="2147483647" />
-                  </upperBound>
-                </inputPin>
-              </invocationActionHasArguments>
-              <invocationActionHasArguments>
-                <inputPin
                   Id="9d10e640-76c4-492a-a884-928119e8a983"
-                  name="wd"
+                  name="id"
                   isLeaf="false"
                   ordering="Unordered"
                   isControlType="false"
@@ -1853,23 +1793,28 @@
                 </inputPin>
               </invocationActionHasArguments>
             </pins>
+            <behavior>
+              <activityMoniker
+                Id="38dff6f5-c1c5-4917-8b86-e47c4a5d99a6"
+                LastKnownName="complete.R"
+                LastKnownLocation="hw1AcitivityDiagram.uml" />
+            </behavior>
           </callBehaviorAction>
           <objectNode
             Id="59df08fe-e101-499d-bc48-f06e5b082086"
-            name="create vectorForCsvFiles in direictory"
+            name="numParticulateMatterCompleteCaseDataFramesForCsvFilesInId "
             isLeaf="false"
             ordering="Unordered"
             isControlType="false">
             <objectFlowTargets>
               <objectFlow
                 Id="c3674681-1201-4747-aee4-7bd37f863d84"
-                guard="vectorForCsvFiles &lt;- list.files(path = &quot;.&quot;, all.files = TRUE,full.names = FALSE, recursive = TRUE)"
                 isLeaf="false"
                 isMulticast="false"
                 isMultireceive="false">
                 <objectNodeMoniker
                   Id="9cba6f22-6f79-4413-8b57-8a8ebc7dca95"
-                  LastKnownName="create vectorForCsvFilesInId"
+                  LastKnownName="meetThresholdParticulateMatterCompleteCaseDataFramesForCsvFilesInId "
                   LastKnownLocation="hw1AcitivityDiagram.uml" />
               </objectFlow>
             </objectFlowTargets>
@@ -1882,31 +1827,19 @@
           </objectNode>
           <objectNode
             Id="9cba6f22-6f79-4413-8b57-8a8ebc7dca95"
-            name="create vectorForCsvFilesInId"
+            name="meetThresholdParticulateMatterCompleteCaseDataFramesForCsvFilesInId "
             isLeaf="false"
             ordering="Unordered"
             isControlType="false">
             <objectFlowTargets>
               <objectFlow
                 Id="d8b30e50-d18c-4e68-a49e-c497bc1e8536"
-                guard="listOfDataFramesForCsvFilesInId &lt;- sapply(vectorForCsvFilesInId, read.csv, simplify = FALSE)"
                 isLeaf="false"
                 isMulticast="false"
                 isMultireceive="false">
                 <objectNodeMoniker
                   Id="4643da9e-9be0-48cb-b80f-599b99279fbb"
-                  LastKnownName="create listOfDataFramesForCsvFilesInId"
-                  LastKnownLocation="hw1AcitivityDiagram.uml" />
-              </objectFlow>
-              <objectFlow
-                Id="8463d18d-7ecf-4670-aee0-fef91fe7d77b"
-                guard="vectorForCsvFilesInId"
-                isLeaf="false"
-                isMulticast="false"
-                isMultireceive="false">
-                <objectNodeMoniker
-                  Id="4a60ecc6-d4e5-4407-8b46-d38cf78dedf3"
-                  LastKnownName="create numGoodParticulateMatterCompleteCaseMetThresholdDataFramesForCsvFilesInId"
+                  LastKnownName="metThresholdParticulateMatterCompleteCaseDataFramesForCsvFilesInId "
                   LastKnownLocation="hw1AcitivityDiagram.uml" />
               </objectFlow>
             </objectFlowTargets>
@@ -1919,22 +1852,10 @@
           </objectNode>
           <objectNode
             Id="c888284a-5268-4fa5-b7ac-8b282749a0f4"
-            name="returns the number of Good Particulate Matter Complete Case DataFrames Fo rCsv Files In Id"
+            name="unlist(correlationMetThresholdListOfDataFramesForCsvFilesInId)"
             isLeaf="false"
             ordering="Unordered"
             isControlType="false">
-            <objectFlowTargets>
-              <objectFlow
-                Id="7799234c-208b-44be-95d8-9fdafa9648cc"
-                isLeaf="false"
-                isMulticast="false"
-                isMultireceive="false">
-                <inputPinMoniker
-                  Id="affbb2cf-c74f-46ba-91f5-75db675ce893"
-                  LastKnownName="!is.na"
-                  LastKnownLocation="hw1AcitivityDiagram.uml" />
-              </objectFlow>
-            </objectFlowTargets>
             <upperBound>
               <literalInteger
                 Id="0f3cfe55-4358-454f-beee-f1a15d0bf266"
@@ -1956,7 +1877,7 @@
                 isMultireceive="false">
                 <objectNodeMoniker
                   Id="c888284a-5268-4fa5-b7ac-8b282749a0f4"
-                  LastKnownName="returns the number of Good Particulate Matter Complete Case DataFrames Fo rCsv Files In Id"
+                  LastKnownName="unlist(correlationMetThresholdListOfDataFramesForCsvFilesInId)"
                   LastKnownLocation="hw1AcitivityDiagram.uml" />
               </objectFlow>
             </objectFlowTargets>
@@ -1967,44 +1888,9 @@
                 value="2147483647" />
             </upperBound>
           </objectNode>
-          <callBehaviorAction
-            Id="cf50d582-51e0-41c0-9d9b-6474a056fc89"
-            name="Set Working Dir to directory"
-            isLeaf="false">
-            <objectFlowTargets>
-              <objectFlow
-                Id="dcbae010-5218-413c-b132-7c94afb6ed30"
-                isLeaf="false"
-                isMulticast="false"
-                isMultireceive="false">
-                <objectNodeMoniker
-                  Id="59df08fe-e101-499d-bc48-f06e5b082086"
-                  LastKnownName="create vectorForCsvFiles in direictory"
-                  LastKnownLocation="hw1AcitivityDiagram.uml" />
-              </objectFlow>
-            </objectFlowTargets>
-            <pins>
-              <invocationActionHasArguments>
-                <inputPin
-                  Id="7437da6d-a3b0-4cda-a08f-b6c6fe7877db"
-                  name="wd"
-                  isLeaf="false"
-                  ordering="Unordered"
-                  isControlType="false"
-                  isControl="false">
-                  <upperBound>
-                    <literalInteger
-                      Id="ab69c624-8a97-424d-ae50-741f55143474"
-                      name="2147483647"
-                      value="2147483647" />
-                  </upperBound>
-                </inputPin>
-              </invocationActionHasArguments>
-            </pins>
-          </callBehaviorAction>
           <objectNode
             Id="4643da9e-9be0-48cb-b80f-599b99279fbb"
-            name="create listOfDataFramesForCsvFilesInId"
+            name="metThresholdParticulateMatterCompleteCaseDataFramesForCsvFilesInId "
             isLeaf="false"
             ordering="Unordered"
             isControlType="false">
@@ -2016,7 +1902,7 @@
                 isMultireceive="false">
                 <objectNodeMoniker
                   Id="8308ee8b-6445-4685-8c08-dfd7e4372077"
-                  LastKnownName="create  numGoodParticulateMatterCompleteCaseListsForCsvFilesInId "
+                  LastKnownName="metThresholdlistOfCsvFilesInId "
                   LastKnownLocation="hw1AcitivityDiagram.uml" />
               </objectFlow>
             </objectFlowTargets>
@@ -2029,40 +1915,19 @@
           </objectNode>
           <objectNode
             Id="8308ee8b-6445-4685-8c08-dfd7e4372077"
-            name="create  numGoodParticulateMatterCompleteCaseListsForCsvFilesInId "
+            name="metThresholdlistOfCsvFilesInId "
             isLeaf="false"
             ordering="Unordered"
             isControlType="false">
             <objectFlowTargets>
               <objectFlow
                 Id="5e84f587-6853-4aec-801a-ec008b45090a"
-                guard="numGoodParticulateMatterCompleteCaseDataFramesForCsvFilesInId &lt;- rev(stack(data.frame(numGoodParticulateMatterCompleteCaseListsForCsvFilesInId)))"
                 isLeaf="false"
                 isMulticast="false"
                 isMultireceive="false">
                 <objectNodeMoniker
                   Id="5649a6bb-a5ef-4670-accc-aeec4545fbbd"
-                  LastKnownName="create numGoodParticulateMatterCompleteCaseDataFramesForCsvFilesInId"
-                  LastKnownLocation="hw1AcitivityDiagram.uml" />
-              </objectFlow>
-              <objectFlow
-                Id="12ff784d-18e1-4301-9f89-c9eaab1690bf"
-                isLeaf="false"
-                isMulticast="false"
-                isMultireceive="false">
-                <objectNodeMoniker
-                  Id="ff78077f-091d-45cf-b07b-aa571d2260e6"
-                  LastKnownName="create numBadParticulateMatterCompleteCaseDataFramesForCsvFilesInId"
-                  LastKnownLocation="hw1AcitivityDiagram.uml" />
-              </objectFlow>
-              <objectFlow
-                Id="1a66c42a-2940-4511-88b8-d318c6278d36"
-                isLeaf="false"
-                isMulticast="false"
-                isMultireceive="false">
-                <objectNodeMoniker
-                  Id="44873c41-eff3-472f-b275-ffb040223aa7"
-                  LastKnownName="create totalNumParticulateMatterCompleteCaseDataFramesForCsvFilesInId"
+                  LastKnownName="metThresholdlistOfDataFramesForCsvFilesInId "
                   LastKnownLocation="hw1AcitivityDiagram.uml" />
               </objectFlow>
             </objectFlowTargets>
@@ -2079,89 +1944,13 @@
             isLeaf="false" />
           <objectNode
             Id="5649a6bb-a5ef-4670-accc-aeec4545fbbd"
-            name="create numGoodParticulateMatterCompleteCaseDataFramesForCsvFilesInId"
+            name="metThresholdlistOfDataFramesForCsvFilesInId "
             isLeaf="false"
             ordering="Unordered"
             isControlType="false">
-            <objectFlowTargets>
-              <objectFlow
-                Id="ecaf94d3-01cb-40d3-beae-777be2d46ac2"
-                isLeaf="false"
-                isMulticast="false"
-                isMultireceive="false">
-                <objectNodeMoniker
-                  Id="636a3efb-0c51-46a4-8b98-2906ab12d12d"
-                  LastKnownName="create numGoodParticulateMatterCompleteCaseThresholdDataFramesForCsvFilesInId"
-                  LastKnownLocation="hw1AcitivityDiagram.uml" />
-              </objectFlow>
-            </objectFlowTargets>
             <upperBound>
               <literalInteger
                 Id="511e14e9-42d9-476f-9958-02210db93c03"
-                name="2147483647"
-                value="2147483647" />
-            </upperBound>
-          </objectNode>
-          <objectNode
-            Id="ff78077f-091d-45cf-b07b-aa571d2260e6"
-            name="create numBadParticulateMatterCompleteCaseDataFramesForCsvFilesInId"
-            isLeaf="false"
-            ordering="Unordered"
-            isControlType="false">
-            <objectFlowTargets>
-              <objectFlow
-                Id="1ca9160e-5677-4eea-bf1d-7725091edd9a"
-                isLeaf="false"
-                isMulticast="false"
-                isMultireceive="false">
-                <objectNodeMoniker
-                  Id="636a3efb-0c51-46a4-8b98-2906ab12d12d"
-                  LastKnownName="create numGoodParticulateMatterCompleteCaseThresholdDataFramesForCsvFilesInId"
-                  LastKnownLocation="hw1AcitivityDiagram.uml" />
-              </objectFlow>
-            </objectFlowTargets>
-            <upperBound>
-              <literalInteger
-                Id="95a33212-08b7-45a7-bb9d-a5750c760ee1"
-                name="2147483647"
-                value="2147483647" />
-            </upperBound>
-          </objectNode>
-          <objectNode
-            Id="44873c41-eff3-472f-b275-ffb040223aa7"
-            name="create totalNumParticulateMatterCompleteCaseDataFramesForCsvFilesInId"
-            isLeaf="false"
-            ordering="Unordered"
-            isControlType="false">
-            <upperBound>
-              <literalInteger
-                Id="ca1f83c7-77d6-4aee-b025-96999c84b34a"
-                name="2147483647"
-                value="2147483647" />
-            </upperBound>
-          </objectNode>
-          <objectNode
-            Id="636a3efb-0c51-46a4-8b98-2906ab12d12d"
-            name="create numGoodParticulateMatterCompleteCaseThresholdDataFramesForCsvFilesInId"
-            isLeaf="false"
-            ordering="Unordered"
-            isControlType="false">
-            <objectFlowTargets>
-              <objectFlow
-                Id="a2f2e02d-161f-4882-9383-9d516400f2ab"
-                guard="goodToBadRatio &lt;- numGoodParticulateMatterCompleteCaseDataFramesForCsvFilesInId/ numBadParticulateMatterCompleteCaseDataFramesForCsvFilesInId"
-                isLeaf="false"
-                isMulticast="false"
-                isMultireceive="false">
-                <objectNodeMoniker
-                  Id="4dc51cde-5d98-4d8d-88a1-067a5ede0e36"
-                  LastKnownName="create ratioGoodToBadParticulateMatterCompleteCaseDataFramesForCsvFilesInId1"
-                  LastKnownLocation="hw1AcitivityDiagram.uml" />
-              </objectFlow>
-            </objectFlowTargets>
-            <upperBound>
-              <literalInteger
-                Id="a1437949-a31d-4027-a470-99dc7d2ed1e0"
                 name="2147483647"
                 value="2147483647" />
             </upperBound>
@@ -2179,8 +1968,8 @@
                 isMulticast="false"
                 isMultireceive="false">
                 <objectNodeMoniker
-                  Id="4dc51cde-5d98-4d8d-88a1-067a5ede0e36"
-                  LastKnownName="create ratioGoodToBadParticulateMatterCompleteCaseDataFramesForCsvFilesInId1"
+                  Id="9cba6f22-6f79-4413-8b57-8a8ebc7dca95"
+                  LastKnownName="meetThresholdParticulateMatterCompleteCaseDataFramesForCsvFilesInId "
                   LastKnownLocation="hw1AcitivityDiagram.uml" />
               </objectFlow>
             </objectFlowTargets>
@@ -2192,102 +1981,201 @@
             </upperBound>
           </activityParameterNode>
           <objectNode
-            Id="4dc51cde-5d98-4d8d-88a1-067a5ede0e36"
-            name="create ratioGoodToBadParticulateMatterCompleteCaseDataFramesForCsvFilesInId1"
-            isLeaf="false"
-            ordering="Unordered"
-            isControlType="false">
-            <objectFlowTargets>
-              <objectFlow
-                Id="5de5334e-a61c-48a1-80fe-fd08e6e96209"
-                guard="goodToBadRatio &gt; threshold"
-                isLeaf="false"
-                isMulticast="false"
-                isMultireceive="false">
-                <objectNodeMoniker
-                  Id="4a60ecc6-d4e5-4407-8b46-d38cf78dedf3"
-                  LastKnownName="create numGoodParticulateMatterCompleteCaseMetThresholdDataFramesForCsvFilesInId"
-                  LastKnownLocation="hw1AcitivityDiagram.uml" />
-              </objectFlow>
-            </objectFlowTargets>
-            <upperBound>
-              <literalInteger
-                Id="3ed97e9b-64be-44e6-bfd6-35bacd6ccd7f"
-                name="2147483647"
-                value="2147483647" />
-            </upperBound>
-          </objectNode>
-          <objectNode
-            Id="4a60ecc6-d4e5-4407-8b46-d38cf78dedf3"
-            name="create numGoodParticulateMatterCompleteCaseMetThresholdDataFramesForCsvFilesInId"
-            isLeaf="false"
-            ordering="Unordered"
-            isControlType="false">
-            <objectFlowTargets>
-              <objectFlow
-                Id="d3981217-f375-4519-b9f8-f4622162b18a"
-                guard="vectorForCsvFilesInId"
-                isLeaf="false"
-                isMulticast="false"
-                isMultireceive="false">
-                <objectNodeMoniker
-                  Id="4a60ecc6-d4e5-4407-8b46-d38cf78dedf3"
-                  LastKnownName="create numGoodParticulateMatterCompleteCaseMetThresholdDataFramesForCsvFilesInId"
-                  LastKnownLocation="hw1AcitivityDiagram.uml" />
-              </objectFlow>
-              <objectFlow
-                Id="92427f31-2df6-4030-8044-e9aa230c3dae"
-                guard="listOfDataFramesForCsvFilesInId &lt;- sapply(vectorForCsvFilesInId, read.csv, simplify = FALSE)"
-                isLeaf="false"
-                isMulticast="false"
-                isMultireceive="false">
-                <objectNodeMoniker
-                  Id="791cb19c-bf47-4d70-8abd-de217f68bbe6"
-                  LastKnownName="create listOfDataFramesForCsvFilesInId"
-                  LastKnownLocation="hw1AcitivityDiagram.uml" />
-              </objectFlow>
-            </objectFlowTargets>
-            <upperBound>
-              <literalInteger
-                Id="497520d5-9a2d-4ba9-97e8-cfdb48d95fdd"
-                name="2147483647"
-                value="2147483647" />
-            </upperBound>
-          </objectNode>
-          <objectNode
-            Id="791cb19c-bf47-4d70-8abd-de217f68bbe6"
-            name="create listOfDataFramesForCsvFilesInId"
-            isLeaf="false"
-            ordering="Unordered"
-            isControlType="false">
-            <objectFlowTargets>
-              <objectFlow
-                Id="1bac9376-770f-4490-82cd-740ae941176a"
-                isLeaf="false"
-                isMulticast="false"
-                isMultireceive="false">
-                <objectNodeMoniker
-                  Id="fb57af20-cc91-4cfd-9884-5c1ba5065bde"
-                  LastKnownName="create correlationParticulateMatterCompleteCaseDataFramesForCsvFilesInId"
-                  LastKnownLocation="hw1AcitivityDiagram.uml" />
-              </objectFlow>
-            </objectFlowTargets>
-            <upperBound>
-              <literalInteger
-                Id="72aa89d3-ef73-4a40-8725-6ccee4845dcd"
-                name="2147483647"
-                value="2147483647" />
-            </upperBound>
-          </objectNode>
-          <objectNode
             Id="fb57af20-cc91-4cfd-9884-5c1ba5065bde"
-            name="create correlationParticulateMatterCompleteCaseDataFramesForCsvFilesInId"
+            name="metThresholdListOfDataFramesForCsvFilesInId "
             isLeaf="false"
             ordering="Unordered"
             isControlType="false">
             <objectFlowTargets>
               <objectFlow
                 Id="95b2cc6f-fd7a-40a9-8b19-365960496d03"
+                isLeaf="false"
+                isMulticast="false"
+                isMultireceive="false">
+                <objectNodeMoniker
+                  Id="5639b17a-0257-45d2-b1d4-de0eaf71fa27"
+                  LastKnownName="metThresholdListOfDataFramesForCsvFilesInId 1"
+                  LastKnownLocation="hw1AcitivityDiagram.uml" />
+              </objectFlow>
+            </objectFlowTargets>
+            <upperBound>
+              <literalInteger
+                Id="bc6a16eb-afa8-408e-8738-9aebbec93df1"
+                name="2147483647"
+                value="2147483647" />
+            </upperBound>
+          </objectNode>
+          <callBehaviorAction
+            Id="38762c6e-612f-482a-a1d9-23b846ad9f9f"
+            name="Toggle  Working Directory"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="ea01e372-835d-4543-8c52-77ad931a1d26"
+                isLeaf="false">
+                <callBehaviorActionMoniker
+                  Id="12411d2e-dc5a-4940-b96a-baf55cc88d25"
+                  LastKnownName="Set Working Dir to directory"
+                  LastKnownLocation="hw1AcitivityDiagram.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+            <pins>
+              <callActionHasResults>
+                <outputPin
+                  Id="fe09ca7e-bd5f-4de5-a0a4-4df96b0fd81f"
+                  name="wd"
+                  isLeaf="false"
+                  ordering="Unordered"
+                  isControlType="false"
+                  isControl="false">
+                  <objectFlowTargets>
+                    <objectFlow
+                      Id="00851b9c-5c7e-4196-99b7-2b4d08f2b5ae"
+                      guard="initialDirectory &lt;- getwd()"
+                      isLeaf="false"
+                      isMulticast="false"
+                      isMultireceive="false">
+                      <inputPinMoniker
+                        Id="508875fe-ccd9-4d91-b3f3-30d3dd0e5f74"
+                        LastKnownName="initialDirectory"
+                        LastKnownLocation="hw1AcitivityDiagram.uml" />
+                    </objectFlow>
+                  </objectFlowTargets>
+                  <upperBound>
+                    <literalInteger
+                      Id="7c214a36-7dba-4010-9ffe-113b861f160b"
+                      name="2147483647"
+                      value="2147483647" />
+                  </upperBound>
+                </outputPin>
+              </callActionHasResults>
+              <callActionHasResults>
+                <outputPin
+                  Id="f258cef0-f198-453e-b2fc-8b3b3f87e47b"
+                  name="return fuction value"
+                  isLeaf="false"
+                  ordering="Unordered"
+                  isControlType="false"
+                  isControl="false">
+                  <upperBound>
+                    <literalInteger
+                      Id="80d4ddc2-391a-4118-b631-fdfff9dddbe4"
+                      name="2147483647"
+                      value="2147483647" />
+                  </upperBound>
+                </outputPin>
+              </callActionHasResults>
+              <callActionHasResults>
+                <outputPin
+                  Id="033637b0-3501-4fe6-a898-93c9f4c23738"
+                  name="initialDiectoryr"
+                  isLeaf="false"
+                  ordering="Unordered"
+                  isControlType="false"
+                  isControl="false">
+                  <objectFlowTargets>
+                    <objectFlow
+                      Id="6b550a8e-ad7e-4deb-856f-6ba43b80e1c5"
+                      guard="setwd(initialDirectory)"
+                      isLeaf="false"
+                      isMulticast="false"
+                      isMultireceive="false">
+                      <inputPinMoniker
+                        Id="0c2c3125-a205-4d48-8b7a-2d56f289870c"
+                        LastKnownName="wd"
+                        LastKnownLocation="hw1AcitivityDiagram.uml" />
+                    </objectFlow>
+                  </objectFlowTargets>
+                  <upperBound>
+                    <literalInteger
+                      Id="52513824-5d87-4756-ae4d-eafb88d60090"
+                      name="2147483647"
+                      value="2147483647" />
+                  </upperBound>
+                </outputPin>
+              </callActionHasResults>
+              <invocationActionHasArguments>
+                <inputPin
+                  Id="508875fe-ccd9-4d91-b3f3-30d3dd0e5f74"
+                  name="initialDirectory"
+                  isLeaf="false"
+                  ordering="Unordered"
+                  isControlType="false"
+                  isControl="false">
+                  <upperBound>
+                    <literalInteger
+                      Id="2a3a0702-75ff-4344-8576-74b810060164"
+                      name="2147483647"
+                      value="2147483647" />
+                  </upperBound>
+                </inputPin>
+              </invocationActionHasArguments>
+              <invocationActionHasArguments>
+                <inputPin
+                  Id="955f7e0f-349b-4055-8d80-201f85ee5e81"
+                  name="!is.na"
+                  isLeaf="false"
+                  ordering="Unordered"
+                  isControlType="false"
+                  isControl="false">
+                  <upperBound>
+                    <literalInteger
+                      Id="da443514-06c8-48ea-a958-0391d75ec726"
+                      name="2147483647"
+                      value="2147483647" />
+                  </upperBound>
+                </inputPin>
+              </invocationActionHasArguments>
+              <invocationActionHasArguments>
+                <inputPin
+                  Id="0c2c3125-a205-4d48-8b7a-2d56f289870c"
+                  name="wd"
+                  isLeaf="false"
+                  ordering="Unordered"
+                  isControlType="false"
+                  isControl="false">
+                  <upperBound>
+                    <literalInteger
+                      Id="44ff065d-e09f-4b48-af15-10d86c4eef73"
+                      name="2147483647"
+                      value="2147483647" />
+                  </upperBound>
+                </inputPin>
+              </invocationActionHasArguments>
+            </pins>
+          </callBehaviorAction>
+          <callBehaviorAction
+            Id="12411d2e-dc5a-4940-b96a-baf55cc88d25"
+            name="Set Working Dir to directory"
+            isLeaf="false">
+            <pins>
+              <invocationActionHasArguments>
+                <inputPin
+                  Id="71f3348d-56a3-4798-b04f-19cd101f497e"
+                  name="wd"
+                  isLeaf="false"
+                  ordering="Unordered"
+                  isControlType="false"
+                  isControl="false">
+                  <upperBound>
+                    <literalInteger
+                      Id="97bb8c13-490b-4a6b-a20c-d789601b2c3d"
+                      name="2147483647"
+                      value="2147483647" />
+                  </upperBound>
+                </inputPin>
+              </invocationActionHasArguments>
+            </pins>
+          </callBehaviorAction>
+          <objectNode
+            Id="5639b17a-0257-45d2-b1d4-de0eaf71fa27"
+            name="metThresholdListOfDataFramesForCsvFilesInId 1"
+            isLeaf="false"
+            ordering="Unordered"
+            isControlType="false">
+            <objectFlowTargets>
+              <objectFlow
+                Id="743de240-11b5-4c37-9493-e52e282567c8"
                 isLeaf="false"
                 isMulticast="false"
                 isMultireceive="false">
@@ -2299,7 +2187,7 @@
             </objectFlowTargets>
             <upperBound>
               <literalInteger
-                Id="bc6a16eb-afa8-408e-8738-9aebbec93df1"
+                Id="a467d8e5-a12a-491a-ac54-5f6b29107da4"
                 name="2147483647"
                 value="2147483647" />
             </upperBound>
