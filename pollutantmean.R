@@ -46,6 +46,8 @@ pollutantmean <- function(directory, pollutant, id = 1:332) {
   w <- weightsParticulateMatterDataFramesForCsvFilesInId
   m <- meansParticulateMatterDataFramesForCsvFilesInId
 
-  sum(w * m)/sum(w)
+  if (length(vectorForCsvFilesInId)==1) m[[1]] else sum(w * m)/sum(w)
+
+
 
   }
